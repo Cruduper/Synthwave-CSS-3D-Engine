@@ -5,25 +5,61 @@ body {
   overflow:hidden;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 50px;
   perspective: 4em;
-  perspective-origin: 50% calc(40%);
+  perspective-origin: 50% 50%;
 }
 
-.scene, #ground{
-  postion: relative;
+.scene, #ground, #hoverCraft{
+  position: relative;
   transform-style: preserve-3d;
 }
 
 
 .sidePanel  {
+  position: absolute;
+  width: 1em;
+  height: .2em;
   
 }
 
+#sidePanel1 {
+    transform: translateX(-0.68em) translateY(.7em) translateZ(3em) rotateX(-5deg) rotateY(-110deg) /*rotateZ(-15deg)*/; 
+}
+
+#sidePanel2 {
+  /* transform: translateZ(3em); */
+  transform: translateX(-.32em) translateY(.7em) translateZ(3em) rotateX(-5deg) rotateY(110deg) /*rotateZ(-10deg)*/; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/***********    GLOW COLORS  *************/
+.pinkGlow {
+  border-collapse: collapse;
+  border: 1px solid #FCCF; 
+  box-shadow: 0 0 15px #F33C;
+}
+
+
+
+
+
+
+
+/***********   GROUND STUFF   **********/
 
 .floor  {
   position: absolute;
-  left: -75em;
+  left: -100em;
 /*   width: 30em;
   height: 2em; */
   margin: 0px;
@@ -62,21 +98,22 @@ body {
 table {
   border-collapse: collapse;
 /*   border-spacing: 0px; */
-  width: 150em;
-  height: 25em;
+  width: 200em;
+  height: 50em;
 }
 
 .horLine  {
   margin: 10px;
   padding: 10px;
+  /* box-shadow: 0 0 .75em #8F8F; */
 }
 
 .vertLine {
   width: 2em;
   height: 2em;
-  border-left: 3px solid #0D0C; 
-  border-top: 3px solid #0D0C; 
-  box-shadow: 0 0 20px #8F8F;
+  border-left: 3px solid #0D0F; 
+  border-top: 3px solid #0D0F; 
+  box-shadow: 0 0 1em #8F8F;
 /*   border-bottom: 0px solid green; */
 /*   border-right: 0px; */
   margin: 0px;
@@ -84,10 +121,10 @@ table {
 }
 
 .lastElementBorder  {
-  border-right: 3px solid green;
+  border-right: 3px solid #0D0C;
 }
 
-
+/* ***********GROUND ANIMATION****************** */
 @keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
   33.332% {transform: rotateX(90deg) translateY(100%); }
@@ -106,3 +143,22 @@ table {
   0%   {transform: rotateX(90deg) translateY(-200%)}
   100% {transform: rotateX(90deg) translateY(100%)}
 }
+
+
+/* ***********ENABLE BELOW TO STOP GROUND ANIMATIONS****************** */
+/* @keyframes floor1move {
+  0%   {transform: rotateX(90deg) translateY(0%);}
+  100%   {transform: rotateX(90deg) translateY(0%);}
+
+}
+
+@keyframes floor2move {
+  0%   {transform: rotateX(90deg) translateY(-100%)}
+  100%   {transform: rotateX(90deg) translateY(-100%)}
+
+}
+
+@keyframes floor3move {
+  0%   {transform: rotateX(90deg) translateY(-200%)}
+  100% {transform: rotateX(90deg) translateY(-200%)}
+} */
