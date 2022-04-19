@@ -1,3 +1,7 @@
+:root {
+  --sceneRotate: 0;
+}
+
 body {
   background-color: #000;
   min-height: 100vh;
@@ -6,8 +10,13 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  perspective: 4em;
+  perspective: 7em;
   perspective-origin: 50% 50%;
+}
+
+.form-group {
+  position: fixed;
+  top: 10%;
 }
 
 .scene, #ground, #hoverCraft{
@@ -15,6 +24,10 @@ body {
   transform-style: preserve-3d;
 }
 
+.scene{
+  transform: rotateY( var(--sceneRotate));
+  top: 
+}
 
 .sidePanel  {
   position: absolute;
@@ -24,12 +37,12 @@ body {
 }
 
 #sidePanel1 {
-    transform: translateX(-0.68em) translateY(.7em) translateZ(3em) rotateX(-5deg) rotateY(-110deg) /*rotateZ(-15deg)*/; 
+    transform: translateX(-0.68em) translateY(15em) translateZ(3em) rotateX(-5deg) rotateY(-110deg) /*rotateZ(-15deg)*/; 
 }
 
 #sidePanel2 {
   /* transform: translateZ(3em); */
-  transform: translateX(-.32em) translateY(.7em) translateZ(3em) rotateX(-5deg) rotateY(110deg) /*rotateZ(-10deg)*/; 
+  transform: translateX(-.32em) translateY(5em) translateZ(3em) rotateX(-5deg) rotateY(110deg) /*rotateZ(-10deg)*/; 
 }
 
 
