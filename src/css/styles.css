@@ -1,0 +1,108 @@
+body {
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  overflow:hidden;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  perspective: 4em;
+  perspective-origin: 50% calc(40%);
+}
+
+.scene, #ground{
+  postion: relative;
+  transform-style: preserve-3d;
+}
+
+
+.sidePanel  {
+  
+}
+
+
+.floor  {
+  position: absolute;
+  left: -75em;
+/*   width: 30em;
+  height: 2em; */
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+#floor1 {
+/*   display: none; */
+  animation-name: floor1move;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#floor2 {
+/*   display: none; */
+  animation-name: floor2move;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#floor3 {
+/*   display: none; */
+  animation-name: floor3move;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+
+table {
+  border-collapse: collapse;
+/*   border-spacing: 0px; */
+  width: 150em;
+  height: 25em;
+}
+
+.horLine  {
+  margin: 10px;
+  padding: 10px;
+}
+
+.vertLine {
+  width: 2em;
+  height: 2em;
+  border-left: 3px solid #0D0C; 
+  border-top: 3px solid #0D0C; 
+  box-shadow: 0 0 20px #8F8F;
+/*   border-bottom: 0px solid green; */
+/*   border-right: 0px; */
+  margin: 0px;
+  padding: 0px;
+}
+
+.lastElementBorder  {
+  border-right: 3px solid green;
+}
+
+
+@keyframes floor1move {
+  0%   {transform: rotateX(90deg) translateY(0%);}
+  33.332% {transform: rotateX(90deg) translateY(100%); }
+  33.333%   {transform: rotateX(90deg) translateY(-200%); }
+  100% {transform: rotateX(90deg) translateY(0%); }
+}
+
+@keyframes floor2move {
+  0%   {transform: rotateX(90deg) translateY(-100%)}
+  66.666% {transform: rotateX(90deg) translateY(100%)}
+  66.667%   {transform: rotateX(90deg) translateY(-200%)}
+  100% {transform: rotateX(90deg) translateY(-100%)}
+}
+
+@keyframes floor3move {
+  0%   {transform: rotateX(90deg) translateY(-200%)}
+  100% {transform: rotateX(90deg) translateY(100%)}
+}
