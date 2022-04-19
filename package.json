@@ -1,0 +1,39 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "start": "npm run build & webpack-dev-server --open --mode development",
+    "lint": "eslint src/*js",
+    "test": "jest --colors --coverage",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "Eric Crudup",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "dotenv-webpack": "^2.0.0",
+    "eslint": "^6.3.0",
+    "eslint-loader": "^3.0.0",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "style-loader": "^1.0.0",
+    "webpack": "4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "3.8.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "gh-pages": "^3.2.3"
+  }
+}
