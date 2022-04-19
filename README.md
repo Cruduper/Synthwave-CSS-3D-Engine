@@ -1,20 +1,12 @@
-# _{Application Name}_
+# _3D Engine in CSS_
 
-#### By _**{List of contributors}**_
+#### By _**{Eric Crudup}**_
 
 #### _{Brief description of application} [GH-Pages site link](https://cruduper.github.io/!!!!!insert_site_here!!!!)_
 
 ## Technologies Used
 
 * _JavaScript_
-* _jQuery_
-* _BootStrap_
-* _Popper.js_
-* _npm_
-* _Webpack_
-* _Jest_
-* _Babel_
-* _ESLint_
 * _HTML_
 * _CSS_
 
