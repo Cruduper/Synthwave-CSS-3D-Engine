@@ -5,3 +5,4 @@
 12-1: lunch!
 1-2: trying to understand why the models from tridiv aren't importing correctly. might be something to do with position attribute?
 2-3: getting closer to having tridiv model to display and animate, still unknown visual glitch happening
+3-4: fixed large visual glitch with 3D cyclinder model, still some more minor glitches, got camera slider working again
