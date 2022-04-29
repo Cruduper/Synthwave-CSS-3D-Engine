@@ -20,30 +20,14 @@ body {
   z-index: 2;
 }
 
-.scene, #ground, #hoverCraft, .tire{
+.scene, #ground, #hoverCraft, .tire {
   position: relative;
   transform-style: preserve-3d;
 }
 
 .scene{
   transform: rotateY( var(--sceneRotate));
-  top: 20%;
-}
-
-.sidePanel  {
-  position: absolute;
-  width: 1em;
-  height: .2em;
-  
-}
-
-#sidePanel1 {
-    transform: translateX(-0.68em) translateY(15em) translateZ(3em) rotateX(-5deg) rotateY(-110deg) /*rotateZ(-15deg)*/; 
-}
-
-#sidePanel2 {
-  /* transform: translateZ(3em); */
-  transform: translateX(-.32em) translateY(5em) translateZ(3em) rotateX(-5deg) rotateY(110deg) /*rotateZ(-10deg)*/; 
+  top: 5%;
 }
 
 
@@ -208,11 +192,12 @@ table {
   /* display: none; */
   /* position: relative; */
   /* overflow: hidden; */
-  width: 5em;
-  height: -50em;
+  /* width: 5em; */
+  /* height: -50em; */
+  font-size: .4em;
  
   /* background: transparent; */
-  transform: rotateZ(90deg) ; 
+  /* transform: rotateZ(90deg) ;  */
 }
 
 
