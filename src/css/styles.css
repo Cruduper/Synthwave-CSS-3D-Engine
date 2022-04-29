@@ -1,17 +1,17 @@
 :root {
-  --sceneRotate: 0;
+  --sceneRotate: -25;
 }
 
 body {
   background-color: #000;
-  min-height: 100vh;
+  height: 0vh;
   display: flex;
   overflow:hidden;
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  perspective: 7em;
-  perspective-origin: 50% 50%;
+  perspective: 5em;
+  perspective-origin: 50% 15%;
 }
 
 .form-group {
@@ -56,12 +56,30 @@ body {
 
 
 /***********    GLOW COLORS  *************/
-.pinkGlow {
+.pinkGlowCut {
+  /* border-collapse: collapse;
+  border: 1px solid #FCCF; 
+  box-shadow: 0 0 15px #F33C; */
+  /* background: rgba(255, 255, 255, .1);
+  color: rgba(0, 0, 0, .1); */
+  /* opacity: 1; */
   border-collapse: collapse;
+  -webkit-filter: 
+        drop-shadow(-4px -4px 0 #FCCF)
+        drop-shadow(4px 4px 0 #FCCF)
+        drop-shadow( 0 0 15px #F33C);
+  filter: 
+        drop-shadow(-4px -4px 0 #FCCF)
+        drop-shadow(4px 4px 0 #FCCF)
+        drop-shadow( 0 0 15px #F33C);
+
+}
+
+.pinkGlow {
+border-collapse: collapse;
   border: 1px solid #FCCF; 
   box-shadow: 0 0 15px #F33C;
 }
-
 
 
 
@@ -112,7 +130,7 @@ table {
   border-collapse: collapse;
 /*   border-spacing: 0px; */
   width: 200em;
-  height: 50em;
+  height: 200em;
 }
 
 .horLine  {
@@ -159,7 +177,7 @@ table {
 
 
 /* ***********ENABLE BELOW TO STOP GROUND ANIMATIONS****************** */
-/* @keyframes floor1move {
+@keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
   100%   {transform: rotateX(90deg) translateY(0%);}
 
@@ -174,4 +192,4 @@ table {
 @keyframes floor3move {
   0%   {transform: rotateX(90deg) translateY(-200%)}
   100% {transform: rotateX(90deg) translateY(-200%)}
-} */
+}
