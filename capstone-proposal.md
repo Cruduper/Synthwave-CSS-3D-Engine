@@ -21,8 +21,12 @@ tridiv (to speed up the process of making 3d models out of html elements)
 
 use javascript to make user interactivity with the 3D objects, create a rudimentary lighting system, create a "game" with some sort of objective using user interaction
 
+make music and or sound effects
+
 ## What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
 javascript
+
+An audio DAW (I'll Presonus Studio One) and a bunch of software synthesizers and sampler plugins. 
 
 ## Is there anything else you'd like your instructor to know?
 nope!
