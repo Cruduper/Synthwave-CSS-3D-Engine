@@ -5,16 +5,24 @@
 </head>
 <body>
   
-  <div class="form-group">
-    <label for="angleSlider">angle</label>
-    <input type="range" id="angleSlider" min="-180" max="180" value="0" />
+  <div id="cameraControls">
+    <div class="form-group" id="cameraAngleAboutY">
+      <label for="angleSlider">about Y-axis</label>
+      <input type="range" id="angleSlider" min="-180" max="180" value="0" />
+    </div>
+
+    <div class="form-group" id="leftRSlid">
+      <label for="leftRightSlider">left-right</label>
+      <input type="range" id="leftRightSlider" min="-50" max="50" value="0" />
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="leftRightSlider">left-right</label>
-    <input type="range" id="leftRightSlider" min="-50" max="50" value="0" />
+  <div id="playerControls">
+    <div class="form-group" id="playerleftRSlid">
+      <label for="playerleftRightSlider">Player L-R</label>
+      <input type="range" id="playerleftRightSlider" min="-50" max="50" value="0" />
+    </div>
   </div>
-  
 
 
   <div class="scene">
@@ -66,7 +74,7 @@
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.094);"></div>
       </div>
     </div>
-    <div class="shape cylinder-2 cyl-2 tireFrontLeft">
+    <div class="shape cylinder-2 cyl-2 tireBackLeft">
       <div class="face bm">
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.047);"></div>
       </div>
@@ -116,7 +124,7 @@
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.09);"></div>
       </div>
     </div>
-    <div class="shape cylinder-3 cyl-3 tireBackLeft">
+    <div class="shape cylinder-3 cyl-3 tireFrontRight">
       <div class="face bm">
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.047);"></div>
       </div>
@@ -160,7 +168,7 @@
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.098);"></div>
       </div>
     </div>
-    <div class="shape cylinder-4 cyl-4 tireFrontRight">
+    <div class="shape cylinder-4 cyl-4 tireBackRight">
       <div class="face bm">
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.047);"></div>
       </div>
@@ -210,7 +218,7 @@
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.09);"></div>
       </div>
     </div>
-    <div class="shape cylinder-5 cyl-5 tireBackRight">
+    <div class="shape cylinder-5 cyl-5 tireFrontLeft">
       <div class="face bm">
         <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.047);"></div>
       </div>
@@ -579,7 +587,159 @@
     
   
   
+
+
+
+
+  <!--                     FLOOR/GRID                   -->
   <div id="ground">
+
+    <div id="floorExtraGlow" class="floor" >
+      <table class="lastElementBorder">
+        <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="horLine">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+         <tr class="<">
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+          <th class="vertLine"></th>
+        </tr>
+      </table>
+    </div>  <!--end floorExtraGlow -->
+
+
     <div id="floor1" class="floor" >
       <table class="lastElementBorder">
         <tr class="horLine">

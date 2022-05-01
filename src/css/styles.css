@@ -1,6 +1,9 @@
 :root {
   --sceneRotate: 0;
   --sceneLeftRight: 0;
+  --tireRotationRate: 1s;
+  --floorRate: 3s;
+  --playerLeftRight: 0em;
 }
 
 body {
@@ -10,23 +13,32 @@ body {
   overflow:hidden;
   /* justify-content: center; */
   /* align-items: center; */
-  font-size: 3em;
-  perspective: 25em;
-  perspective-origin: 50% 50%;
+  font-size: 2.5em;
+  perspective: 23em;
+  perspective-origin: 50% 60%;
   position: relative;
 }
 
 .form-group {
-  position: relative;
+  position: fixed;
   font-size: .5em;
+  width: 5%;
   color: gray;
   top: 5%;
-  left: 1%;
+  margin-left: 3%;
   z-index: 2;
 }
 
-#leftRightSlider {
-  /* left: 50%; */
+#cameraControls{
+  /* display: none; */
+}
+
+#leftRSlid {
+  margin-left: 10%;
+}
+#playerleftRSlid {
+  right: 10%;
+  /* display: none; */
 }
 
 .scene, #ground, #cyberCraft {
@@ -42,12 +54,12 @@ body {
 .scene{
   transform: rotateY( var(--sceneRotate)) translateX( var(--sceneLeftRight));
   /* transform: ); */
-  top: 5%;
+  /* top: 5%; */
 }
 
 #cyberCraft {
-  transform: translateZ(-40em) translateY(52.7em);
-  font-size: .45em;
+  transform: translateZ(-23em) translateY(51.8em) translateX( calc(50em + var(--playerLeftRight)) );
+  font-size: .5em;
 }
 
 
@@ -77,13 +89,15 @@ body {
         drop-shadow(-4px -4px 0 #FCCF)
         drop-shadow(4px 4px 0 #FCCF)
         drop-shadow( 0 0 15px #F33C);
-
 }
 
 .pinkGlow, #cyberCraft .face {
-border-collapse: collapse;
-  border: 1px solid #FCCF; 
-  box-shadow: 0 0 15px #F33C;
+  border-collapse: collapse;
+  border: 2px solid #FCCF; 
+  box-shadow: 0 0 30px #F33C;
+
+  border: 2px solid #CDFE; 
+  box-shadow: 0 0 30px #38FF;
 }
 
 
@@ -95,7 +109,7 @@ border-collapse: collapse;
 
 .floor  {
   position: absolute;
-  left: -25em;
+  left: 0em;
 /*   width: 30em;
   height: 2em; */
   margin: 0px;
@@ -103,10 +117,20 @@ border-collapse: collapse;
   
 }
 
+#floorExtraGlow {
+/*   display: none; */
+  opacity: .8;
+  animation-name: floor1move;
+  animation-duration: var(--tireRotationRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
 #floor1 {
 /*   display: none; */
   animation-name: floor1move;
-  animation-duration: 9s;
+  animation-duration: var(--floorRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -114,7 +138,7 @@ border-collapse: collapse;
 #floor2 {
 /*   display: none; */
   animation-name: floor2move;
-  animation-duration: 9s;
+  animation-duration: var(--floorRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -122,7 +146,7 @@ border-collapse: collapse;
 #floor3 {
 /*   display: none; */
   animation-name: floor3move;
-  animation-duration: 9s;
+  animation-duration: var(--floorRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -135,7 +159,7 @@ table {
   border-collapse: collapse;
 /*   border-spacing: 0px; */
   width: 100em;
-  height: 50em;
+  height: 55em;
 }
 
 .horLine  {
@@ -150,10 +174,14 @@ table {
   border-left: 3px solid #0D0F; 
   border-top: 3px solid #0D0F; 
   box-shadow: 0 0 1em #8F8F;
-/*   border-bottom: 0px solid green; */
-/*   border-right: 0px; */
   margin: 0px;
   padding: 0px;
+}
+
+#floorExtraGlow .vertLine {
+  border-top: none; 
+  /* box-shadow: none; */
+  /* clip-path: inset(25px 0px 25px 0px); */
 }
 
 .lastElementBorder  {
@@ -182,22 +210,20 @@ table {
 
 
 /* ***********ENABLE BELOW TO STOP GROUND ANIMATIONS****************** */
-@keyframes floor1move {
+/* @keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
   100%   {transform: rotateX(90deg) translateY(0%);}
 
 }
-
 @keyframes floor2move {
   0%   {transform: rotateX(90deg) translateY(-100%)}
   100%   {transform: rotateX(90deg) translateY(-100%)}
 
 }
-
 @keyframes floor3move {
   0%   {transform: rotateX(90deg) translateY(-200%)}
   100% {transform: rotateX(90deg) translateY(-200%)}
-}
+} */
 
 
 
@@ -227,13 +253,14 @@ table {
 
 .cub-2 .face { /**** sidepods/body ****/
   background-color:#C35C;
+  /* background-color:#55FC; */
 }
 
 .cyl-6 .face, .cyl-6 .side, .cyl-7 .face, .cyl-7 .side { /**** axles ****/
   background-color:#FFF5;
 }
 .cub-3 .face { /**** rear wing platform ****/
-  background-color:#777A;
+  background-color:#666C;
 }
 
 .cub-4 .face, .cub-5 .face { /**** rear wing uprights ****/
@@ -242,9 +269,10 @@ table {
 
 .pri-2 .face { /**** rear wing ****/
   background-color:#512D;
+  /* background-color:#214D; */
 }
 .pri-3 .face { /**** engine housing ****/
-  background-color:#FFF9;
+  background-color:#FFFB;
 }
 .cyl-8 .face, .cyl-8 .side { /**** steering wheel ****/
   background-color:#FFF1;
@@ -258,28 +286,28 @@ table {
 .tireFrontLeft {
 /*   display: none; */
   animation-name: tireSpinFrontLeft;
-  animation-duration: 2s;
+  animation-duration: var(--tireRotationRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 .tireBackLeft {
 /*   display: none; */
   animation-name: tireSpinBackLeft;
-  animation-duration: 2s;
+  animation-duration: var(--tireRotationRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 .tireFrontRight {
 /*   display: none; */
   animation-name: tireSpinFrontRight;
-  animation-duration: 2s;
+  animation-duration: var(--tireRotationRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 .tireBackRight {
 /*   display: none; */
   animation-name: tireSpinBackRight;
-  animation-duration: 2s;
+  animation-duration: var(--tireRotationRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
