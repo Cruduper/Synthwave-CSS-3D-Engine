@@ -6,11 +6,17 @@ import './css/styles.css';
 
 $(document).ready(function() {
 
-  const slider = document.getElementById("slider");
+  const slider = document.getElementById("angleSlider");
   const root = document.documentElement;
 
   slider.addEventListener("input", (e) => {
     root.style.setProperty("--sceneRotate", e.target.value + "deg");
+  });
+
+  const slider2 = document.getElementById("leftRightSlider");
+
+  slider2.addEventListener("input", (e) => {
+    root.style.setProperty("--sceneLeftRight", e.target.value + "em");
   });
 
 });

@@ -1,33 +1,53 @@
 :root {
   --sceneRotate: 0;
+  --sceneLeftRight: 0;
 }
 
 body {
   background-color: #000;
   min-height: 100vh;
   display: flex;
-  /* overflow:hidden; */
-  justify-content: center;
-  align-items: center;
+  overflow:hidden;
+  /* justify-content: center; */
+  /* align-items: center; */
   font-size: 3em;
-  perspective: 15em;
+  perspective: 25em;
   perspective-origin: 50% 50%;
+  position: relative;
 }
 
 .form-group {
-  position: fixed;
+  position: relative;
+  font-size: .5em;
+  color: gray;
   top: 5%;
+  left: 1%;
   z-index: 2;
 }
 
-.scene, #ground, #hoverCraft, .tire {
+#leftRightSlider {
+  /* left: 50%; */
+}
+
+.scene, #ground, #cyberCraft {
   position: relative;
   transform-style: preserve-3d;
 }
 
+ .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
 .scene{
-  transform: rotateY( var(--sceneRotate));
+  transform: rotateY( var(--sceneRotate)) translateX( var(--sceneLeftRight));
+  /* transform: ); */
   top: 5%;
+}
+
+#cyberCraft {
+  transform: translateZ(-40em) translateY(52.7em);
+  font-size: .45em;
 }
 
 
@@ -60,7 +80,7 @@ body {
 
 }
 
-.pinkGlow {
+.pinkGlow, #cyberCraft .face {
 border-collapse: collapse;
   border: 1px solid #FCCF; 
   box-shadow: 0 0 15px #F33C;
@@ -75,7 +95,7 @@ border-collapse: collapse;
 
 .floor  {
   position: absolute;
-  left: -50em;
+  left: -25em;
 /*   width: 30em;
   height: 2em; */
   margin: 0px;
@@ -115,7 +135,7 @@ table {
   border-collapse: collapse;
 /*   border-spacing: 0px; */
   width: 100em;
-  height: 40em;
+  height: 50em;
 }
 
 .horLine  {
@@ -185,36 +205,169 @@ table {
 
 
 
-/**********************     TIRES     ************************************/
+/****************************     CyberCar     ************************************/
 
- .tire {
-  /* perspective: 800px; */
-  /* display: none; */
-  /* position: relative; */
-  /* overflow: hidden; */
-  /* width: 5em; */
-  /* height: -50em; */
-  font-size: .4em;
- 
-  /* background: transparent; */
-  /* transform: rotateZ(90deg) ;  */
+/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */  
+
+
+          /************* TIRE ROTATE ANIMATIONS **************/
+.cyl-1 .face, .cyl-1 .side, .cyl-2 .face, .cyl-2 .side, 
+.cyl-3 .face, .cyl-3 .side, .cyl-4 .face, .cyl-4 .side, 
+.cyl-5 .face, .cyl-5 .side  {/**** tires ****/
+  background-color:#000B;
+}
+
+.pri-1 .face {/**** front spoiler ****/
+  background-color:#FCC4;
+}
+
+.cub-1 .face { /**** chassis ****/
+  background-color:#111;
+}
+
+.cub-2 .face { /**** sidepods/body ****/
+  background-color:#C35C;
+}
+
+.cyl-6 .face, .cyl-6 .side, .cyl-7 .face, .cyl-7 .side { /**** axles ****/
+  background-color:#FFF5;
+}
+.cub-3 .face { /**** rear wing platform ****/
+  background-color:#777A;
+}
+
+.cub-4 .face, .cub-5 .face { /**** rear wing uprights ****/
+  background-color:#FFF9;
+}
+
+.pri-2 .face { /**** rear wing ****/
+  background-color:#512D;
+}
+.pri-3 .face { /**** engine housing ****/
+  background-color:#FFF9;
+}
+.cyl-8 .face, .cyl-8 .side { /**** steering wheel ****/
+  background-color:#FFF1;
 }
 
 
+
+
+
+              /************* TIRE ROTATE ANIMATIONS **************/
+.tireFrontLeft {
+/*   display: none; */
+  animation-name: tireSpinFrontLeft;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.tireBackLeft {
+/*   display: none; */
+  animation-name: tireSpinBackLeft;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.tireFrontRight {
+/*   display: none; */
+  animation-name: tireSpinFrontRight;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.tireBackRight {
+/*   display: none; */
+  animation-name: tireSpinBackRight;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes tireSpinFrontLeft {
+  from{transform:  translate3D(0em, 0.5em, 0em) rotateZ(90deg) rotateY(0deg)  }
+  to {transform:  translate3D(0em, 0.5em, 0em) rotateZ(90deg) rotateY(-360deg)  }
+}
+
+@keyframes tireSpinBackLeft {
+  from{transform:  translate3D(1em, 0em, 26em) rotateZ(90deg) rotateY(0deg)  }
+  to {transform:  translate3D(1em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
+}
+
+@keyframes tireSpinFrontRight {
+  from{transform: translate3D(18em, 0.5em, 0em) rotateZ(90deg) rotateY(0deg)   }
+  to {transform:  translate3D(18em, 0.5em, 0em) rotateZ(90deg) rotateY(-360deg)  }
+}
+
+@keyframes tireSpinBackRight {
+  from{transform: translate3D(18em, 0em, 26em) rotateZ(90deg) rotateY(0deg)   }
+  to {transform:  translate3D(18em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /************* DONT TOUCH (probably) **************/
 .face {
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.9);
 }
-.scene, .shape, .face, .face-wrapper, .cr { 
+/* .scene, .shape, .face, .face-wrapper, .cr {
   position: absolute;
   transform-style: preserve-3d;
- }
- 
-/* .scene {
+}
+.scene {
   width: 80em;
   height: 80em;
   top: 50%;
   left: 50%;
-  margin: 40em 0 0 40em;
+  margin: -40em 0 0 -40em;
 } */
 .shape {
   top: 50%;
@@ -226,7 +379,7 @@ table {
 .face, .face-wrapper {
   overflow: hidden;
   transform-origin: 0 0;
-  /* backface-visibility: hidden; */
+  backface-visibility: hidden;
   /* hidden by default, prevent blinking and other weird rendering glitchs */
 }
 .face {
@@ -236,7 +389,7 @@ table {
 .face-wrapper .face {
   left: 100%;
   width: 100%;
-  height: 100%;
+  height: 100%
 }
 .photon-shader {
   position: absolute;
@@ -263,9 +416,62 @@ table {
 [class*="cylinder"] .bm {
   top: 100%;
 }
+[class*="prism"] .ft, [class*="prism"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="prism"] .bk {
+  left: 100%;
+}
+[class*="prism"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="prism"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="prism"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="prism"] .lt {
+  left: 100%;
+}
+[class*="prism"] .bm {
+  top: 100%;
+}
+[class*="prism"] .rt .face {
+  left: -100%;
+  transform-origin: 100% 0;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+
+
 /* .cyl-1 styles */
 .cyl-1 {
-  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  /* transform:translate3D(0em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg); */
   opacity:1;
   width:2em;
   height:3em;
@@ -318,84 +524,663 @@ table {
 .cyl-1 .s12 {
   transform: rotateY(346.1538461538462deg) translate3D(-50%, 0, 0.975em);
 }
-.cyl-1 .face, .cyl-1 .side {
-  background-color:#FFF0;
-}
+
+
+
 /* .cyl-2 styles */
 .cyl-2 {
-  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  /* transform:translate3D(1em, 0em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg); */
+  opacity:1;
+  width:7em;
+  height:6em;
+  margin:-3em 0 0 -3.5em;
+}
+.cyl-2 .tp, .cyl-2 .bm {
+  width:7em;
+  height:7em;
+}
+.cyl-2 .side {
+  width:1.6227043207310494em;
+  height:6em;
+}
+.cyl-2 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-2 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 3.475em);
+}
+
+
+/* .cyl-3 styles */
+.cyl-3 {
+  /* transform:translate3D(18em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg); */
   opacity:1;
   width:6em;
   height:5em;
   margin:-2.5em 0 0 -3em;
 }
-.cyl-2 .tp, .cyl-2 .bm {
+.cyl-3 .tp, .cyl-3 .bm {
   width:6em;
   height:6em;
 }
-.cyl-2 .side {
-  width:1.3944608463408996em;
+.cyl-3 .side {
+  width:1.632695154586736em;
   height:5em;
 }
-.cyl-2 .s0 {
-  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s1 {
-  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s2 {
-  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s3 {
-  transform: rotateY(90deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s3 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s4 {
-  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s4 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s5 {
-  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s5 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s6 {
-  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s6 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s7 {
-  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s7 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s8 {
-  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s8 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s9 {
-  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s9 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s10 {
-  transform: rotateY(270deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s10 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s11 {
-  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 2.975em);
+.cyl-3 .s11 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 2.975em);
 }
-.cyl-2 .s12 {
-  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 2.975em);
+ 
+/* .cyl-4 styles */
+.cyl-4 {
+  transform:translate3D(18em, 0em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  opacity:1;
+  width:7em;
+  height:6em;
+  margin:-3em 0 0 -3.5em;
 }
-.cyl-2 .s13 {
-  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 2.975em);
+.cyl-4 .tp, .cyl-4 .bm {
+  width:7em;
+  height:7em;
 }
-.cyl-2 .face, .cyl-2 .side {
-  background-color:#FFF0;
-} 
+.cyl-4 .side {
+  width:1.6227043207310494em;
+  height:6em;
+}
+.cyl-4 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 3.475em);
+}
+.cyl-4 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 3.475em);
+}
 
 
-/********** TIRE ROTATE ANIMATIONS *****************/
-.tire {
-/*   display: none; */
-  animation-name: tireSpin;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+
+/* .cyl-5 styles */
+.cyl-5 {
+  transform:translate3D(1em, .5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  opacity:1;
+  width:6em;
+  height:5em;
+  margin:-2.5em 0 0 -3em;
+}
+.cyl-5 .tp, .cyl-5 .bm {
+  width:6em;
+  height:6em;
+}
+.cyl-5 .side {
+  width:1.632695154586736em;
+  height:5em;
+}
+.cyl-5 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s3 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s4 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s5 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s6 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s7 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s8 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s9 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s10 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-5 .s11 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 2.975em);
 }
 
 
-@keyframes tireSpin {
-  0%   {transform:  rotateY(0deg) }
-  100% {transform:  rotateY(360deg)  }
+/* .pri-1 styles */
+.pri-1 {
+  transform:translate3D(9.5em, 0.5em, -8.5em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:21em;
+  height:5em;
+  margin:-2.5em 0 0 -10.5em;
 }
+.pri-1 .rt .face {
+  transform:rotateZ(-21.801409486351798deg);
+}
+.pri-1 .lt .face {
+  transform:rotateZ(21.801409486351798deg);
+}
+.pri-1 .ft {
+  height:5.385164807134504em;
+  transform:translateZ(-1em) rotateX(21.801409486351798deg);
+}
+.pri-1 .bk {
+  transform:translateZ(-1em) rotateY(180deg);
+}
+.pri-1 .rt, .pri-1 .lt {
+  width:2em;
+  height:5em;
+}
+.pri-1 .rt .face, .pri-1 .lt .face {
+  height:5.385164807134504em;
+}
+.pri-1 .bm {
+  width:21em;
+  height:2em;
+}
+
+
+/* .cub-1 styles */
+.cub-1 {
+  transform:translate3D(9.5em, 0.25em, 11em) rotateX(1deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:2em;
+  margin:-1em 0 0 -2em;
+}
+.cub-1 .ft {
+  transform:translateZ(17em);
+}
+.cub-1 .bk {
+  transform:translateZ(-17em) rotateY(180deg);
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:34em;
+  height:2em;
+}
+.cub-1 .tp, .cub-1 .bm {
+  width:4em;
+  height:34em;
+}
+
+.cub-1 .ft {
+  width:4em;
+  margin-left:0em;
+}
+.cub-1 .bk {
+  width:4em;
+  margin-left:0em;
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:34em;
+}
+.cub-1 .tp, .cub-1 .bm, .cub-1 .tp .photon-shader, .cub-1 .bm .photon-shader {
+  border-radius:0em;
+}
+.cub-1 .cr {
+  width:0em;
+  left:0em;
+}
+.cub-1 .cr-0 {
+  transform: translate3D(4em, 0, 17em);
+}
+.cub-1 .cr-1 {
+  transform: translate3D(4em, 0, -17em);
+}
+.cub-1 .cr-2 {
+  transform: translate3D(0, 0, -17em);
+}
+.cub-1 .cr-3 {
+  transform: translate3D(0, 0, 17em);
+}
+.cub-1 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .side {
+  width:0.025em;
+}
+/* .cub-2 styles */
+.cub-2 {
+  transform:translate3D(9.5em, 0em, 12em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:14em;
+  height:4em;
+  margin:-2em 0 0 -7em;
+}
+.cub-2 .ft {
+  transform:translateZ(8em);
+}
+.cub-2 .bk {
+  transform:translateZ(-8em) rotateY(180deg);
+}
+.cub-2 .rt, .cub-2 .lt {
+  width:16em;
+  height:4em;
+}
+.cub-2 .tp, .cub-2 .bm {
+  width:14em;
+  height:16em;
+}
+
+/* .cyl-6 styles */
+.cyl-6 {
+  transform:translate3D(9.5em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  opacity:1;
+  width:1em;
+  height:12em;
+  margin:-6em 0 0 -0.5em;
+}
+.cyl-6 .tp, .cyl-6 .bm {
+  width:1em;
+  height:1em;
+}
+.cyl-6 .side {
+  width:0.43921356237309506em;
+  height:12em;
+}
+.cyl-6 .s0 {
+  transform: rotateY(22.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s1 {
+  transform: rotateY(67.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s2 {
+  transform: rotateY(112.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s3 {
+  transform: rotateY(157.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s4 {
+  transform: rotateY(202.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s5 {
+  transform: rotateY(247.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s6 {
+  transform: rotateY(292.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-6 .s7 {
+  transform: rotateY(337.5deg) translate3D(-50%, 0, 0.475em);
+}
+
+/* .cyl-7 styles */
+.cyl-7 {
+  transform:translate3D(9.51em, 0em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  opacity:1;
+  width:1em;
+  height:12em;
+  margin:-6em 0 0 -0.5em;
+}
+.cyl-7 .tp, .cyl-7 .bm {
+  width:1em;
+  height:1em;
+}
+.cyl-7 .side {
+  width:0.43921356237309506em;
+  height:12em;
+}
+.cyl-7 .s0 {
+  transform: rotateY(22.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s1 {
+  transform: rotateY(67.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s2 {
+  transform: rotateY(112.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s3 {
+  transform: rotateY(157.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s4 {
+  transform: rotateY(202.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s5 {
+  transform: rotateY(247.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s6 {
+  transform: rotateY(292.5deg) translate3D(-50%, 0, 0.475em);
+}
+.cyl-7 .s7 {
+  transform: rotateY(337.5deg) translate3D(-50%, 0, 0.475em);
+}
+
+/* .cub-3 styles */
+.cub-3 {
+  transform:translate3D(9.5em, -1.5em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:10em;
+  height:1em;
+  margin:-0.5em 0 0 -5em;
+}
+.cub-3 .ft {
+  transform:translateZ(1.5em);
+}
+.cub-3 .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.cub-3 .rt, .cub-3 .lt {
+  width:3em;
+  height:1em;
+}
+.cub-3 .tp, .cub-3 .bm {
+  width:10em;
+  height:3em;
+}
+
+/* .cub-4 styles */
+.cub-4 {
+  transform:translate3D(4.75em, -3.5em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:.5em;
+  height:3em;
+  margin:-1.5em 0 0 -0.25em;
+}
+.cub-4 .ft {
+  transform:translateZ(1.5em);
+}
+.cub-4 .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.cub-4 .rt, .cub-4 .lt {
+  width:3em;
+  height:3em;
+}
+.cub-4 .tp, .cub-4 .bm {
+  width:.5em;
+  height:3em;
+}
+
+/* .cub-5 styles */
+.cub-5 {
+  transform:translate3D(14em, -3.5em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:.5em;
+  height:3em;
+  margin:-1.5em 0 0 -0.25em;
+}
+.cub-5 .ft {
+  transform:translateZ(1.5em);
+}
+.cub-5 .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.cub-5 .rt, .cub-5 .lt {
+  width:3em;
+  height:3em;
+}
+.cub-5 .tp, .cub-5 .bm {
+  width:.5em;
+  height:3em;
+}
+
+/* .pri-2 styles */
+.pri-2 {
+  transform:translate3D(9.51em, -5.5em, 26em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:18em;
+  height:5em;
+  margin:-2.5em 0 0 -9em;
+}
+.pri-2 .rt .face {
+  transform:rotateZ(-11.309932474020195deg);
+}
+.pri-2 .lt .face {
+  transform:rotateZ(11.309932474020195deg);
+}
+.pri-2 .ft {
+  height:5.0990195135927845em;
+  transform:translateZ(-0.5em) rotateX(11.309932474020195deg);
+}
+.pri-2 .bk {
+  transform:translateZ(-0.5em) rotateY(180deg);
+}
+.pri-2 .rt, .pri-2 .lt {
+  width:1em;
+  height:5em;
+}
+.pri-2 .rt .face, .pri-2 .lt .face {
+  height:5.0990195135927845em;
+}
+.pri-2 .bm {
+  width:18em;
+  height:1em;
+}
+
+/* .pri-3 styles */
+.pri-3 {
+  transform:translate3D(9.5em, -3em, 17em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:2em;
+  margin:-1em 0 0 -2em;
+}
+.pri-3 .rt .face {
+  transform:rotateZ(-77.47119229084849deg);
+}
+.pri-3 .lt .face {
+  transform:rotateZ(77.47119229084849deg);
+}
+.pri-3 .ft {
+  height:9.219544457292887em;
+  transform:translateZ(-4.5em) rotateX(77.47119229084849deg);
+}
+.pri-3 .bk {
+  transform:translateZ(-4.5em) rotateY(180deg);
+}
+.pri-3 .rt, .pri-3 .lt {
+  width:9em;
+  height:2em;
+}
+.pri-3 .rt .face, .pri-3 .lt .face {
+  height:9.219544457292887em;
+}
+.pri-3 .bm {
+  width:4em;
+  height:9em;
+}
+
+/* .cyl-8 styles */
+.cyl-8 {
+  transform:translate3D(9.5em, -2em, 8em) rotateX(0deg) rotateY(270deg) rotateZ(-90deg);
+  opacity:1;
+  width:3em;
+  height:0.5em;
+  margin:-0.25em 0 0 -1.5em;
+}
+.cyl-8 .tp, .cyl-8 .bm {
+  width:3em;
+  height:3em;
+}
+.cyl-8 .side {
+  width:0.7097304231704499em;
+  height:0.5em;
+}
+.cyl-8 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 1.475em);
+}
+.cyl-8 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 1.475em);
+}
+
+
+
+
 
