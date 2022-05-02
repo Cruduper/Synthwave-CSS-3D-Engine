@@ -2,7 +2,7 @@
   --sceneRotate: 0;
   --sceneLeftRight: 0;
   --tireRotationRate: 1s;
-  --floorRate: 3s;
+  --floorRate: 5s;
   --playerLeftRight: 0em;
 }
 
@@ -15,7 +15,7 @@ body {
   /* align-items: center; */
   font-size: 2.5em;
   perspective: 23em;
-  perspective-origin: 50% 60%;
+  perspective-origin: 50% 55%;
   position: relative;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 #cyberCraft {
-  transform: translateZ(-23em) translateY(51.8em) translateX( calc(50em + var(--playerLeftRight)) );
+  transform: translateZ(-23em) translateY(51.8em) translateX( calc(29.25em + var(--playerLeftRight)) );
   font-size: .5em;
 }
 
@@ -109,7 +109,7 @@ body {
 
 .floor  {
   position: absolute;
-  left: 0em;
+  left: -30em;
 /*   width: 30em;
   height: 2em; */
   margin: 0px;
@@ -128,7 +128,7 @@ body {
 
 
 #floor1 {
-/*   display: none; */
+  /* display: none; */
   animation-name: floor1move;
   animation-duration: var(--floorRate);
   animation-timing-function: linear;
@@ -136,7 +136,7 @@ body {
 }
 
 #floor2 {
-/*   display: none; */
+  /* display: none; */
   animation-name: floor2move;
   animation-duration: var(--floorRate);
   animation-timing-function: linear;
@@ -144,8 +144,24 @@ body {
 }
 
 #floor3 {
-/*   display: none; */
+  /* display: none; */
   animation-name: floor3move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#floor4 {
+  /* display: none; */
+  animation-name: floor4move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#floor5 {
+  /* display: none; */
+  animation-name: floor5move;
   animation-duration: var(--floorRate);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -188,26 +204,43 @@ table {
   border-right: 3px solid #0D0C;
 }
 
-/* ***********GROUND ANIMATION****************** */
+/************      GROUND ANIMATION     *******************/
 @keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
-  33.332% {transform: rotateX(90deg) translateY(100%); }
-  33.333%   {transform: rotateX(90deg) translateY(-200%); }
+  19.999% {transform: rotateX(90deg) translateY(100%); }
+  20%   {transform: rotateX(90deg) translateY(-400%); }
   100% {transform: rotateX(90deg) translateY(0%); }
 }
 
 @keyframes floor2move {
   0%   {transform: rotateX(90deg) translateY(-100%)}
-  66.666% {transform: rotateX(90deg) translateY(100%)}
-  66.667%   {transform: rotateX(90deg) translateY(-200%)}
+  39.999% {transform: rotateX(90deg) translateY(100%)}
+  40%   {transform: rotateX(90deg) translateY(-400%)}
   100% {transform: rotateX(90deg) translateY(-100%)}
 }
 
 @keyframes floor3move {
   0%   {transform: rotateX(90deg) translateY(-200%)}
-  100% {transform: rotateX(90deg) translateY(100%)}
+  59.999% {transform: rotateX(90deg) translateY(100%)}
+  60%   {transform: rotateX(90deg) translateY(-400%)}
+  100%   {transform: rotateX(90deg) translateY(-200%)}
 }
 
+@keyframes floor4move {
+  0%   {transform: rotateX(90deg) translateY(-300%)}
+  79.999%   {transform: rotateX(90deg) translateY(100%)}
+  80%   {transform: rotateX(90deg) translateY(-400%)}
+  100%   {transform: rotateX(90deg) translateY(-300%)}
+}
+
+@keyframes floor5move {
+  0%   {transform: rotateX(90deg) translateY(-400%)}
+  100%   {transform: rotateX(90deg) translateY(100%)}
+}
+
+/* #floorExtraGlow {
+  display: none;
+} */
 
 /* ***********ENABLE BELOW TO STOP GROUND ANIMATIONS****************** */
 /* @keyframes floor1move {
@@ -240,7 +273,7 @@ table {
  .cyl-2 .face, .cyl-2 .side, 
 .cyl-3 .face, .cyl-3 .side, .cyl-4 .face, .cyl-4 .side, 
 .cyl-5 .face, .cyl-5 .side  {/**** tires ****/
-  background-color:#000B;
+  background-color:#000A;
 }
 
 .tp, .bm, .face{
@@ -289,10 +322,10 @@ background-color:#fff;
   background-color:#FFF1;
 }
 
- /******* pure wireframe mode ********/
-/* [class*="cyl"] .face, [class*="cub"] .face, [class*="pri"] .face{
-  background-color: #FFF0;
-} */
+ /******* enable for pure wireframe mode ********/
+[class*="cyl"] .face, [class*="cub"] .face, [class*="pri"] .face{
+  background-color: #F455;
+}
 
 
               /************* TIRE ROTATE ANIMATIONS **************/
@@ -332,8 +365,8 @@ background-color:#fff;
 }
 
 @keyframes tireSpinBackLeft {
-  from{transform:  translate3D(1em, 0em, 26em) rotateZ(90deg) rotateY(0deg)  }
-  to {transform:  translate3D(1em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
+  from{transform:  translate3D(1.5em, 0em, 26em) rotateZ(90deg) rotateY(0deg)  }
+  to {transform:  translate3D(1.5em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
 }
 
 @keyframes tireSpinFrontRight {
@@ -576,7 +609,7 @@ background-color:#fff;
   opacity:1;
   width:2em;
   height:4em;
-  margin:-2em 0 0 -0.5em;
+  margin:-2em 0 0 -1em;
 }
 .cyl-9 .tp, .cyl-9 .bm {
   width:2em;
@@ -684,7 +717,7 @@ background-color:#fff;
 
 /* .cyl-11 styles */
 .cyl-11 {
-  transform:translate3D(17.51em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  transform:translate3D(17.5em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
   opacity:1;
   width:2em;
   height:4em;
@@ -1130,10 +1163,11 @@ background-color:#fff;
 .cyl-6 .tp, .cyl-6 .bm {
   width:1em;
   height:1em;
+  /* display: none; */
 }
 .cyl-6 .side {
   width:0.43921356237309506em;
-  height:12em;
+  height:12.5em;
 }
 .cyl-6 .s0 {
   transform: rotateY(22.5deg) translate3D(-50%, 0, 0.475em);
@@ -1162,7 +1196,7 @@ background-color:#fff;
 
 /* .cyl-7 styles */
 .cyl-7 {
-  transform:translate3D(9.51em, 0em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  transform:translate3D(9.5em, 0em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
   opacity:1;
   width:1em;
   height:12em;
@@ -1174,7 +1208,7 @@ background-color:#fff;
 }
 .cyl-7 .side {
   width:0.43921356237309506em;
-  height:12em;
+  height:12.5em;
 }
 .cyl-7 .s0 {
   transform: rotateY(22.5deg) translate3D(-50%, 0, 0.475em);
@@ -1249,7 +1283,7 @@ background-color:#fff;
 
 /* .cub-5 styles */
 .cub-5 {
-  transform:translate3D(14em, -3.5em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transform:translate3D(14.25em, -3.5em, 26em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.5em;
   height:3em;
@@ -1272,7 +1306,7 @@ background-color:#fff;
 
 /* .pri-2 styles */
 .pri-2 {
-  transform:translate3D(9.51em, -5.5em, 26em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  transform:translate3D(10em, -5.5em, 26em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:18em;
   height:5em;
