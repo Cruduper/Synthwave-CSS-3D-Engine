@@ -23,4 +23,9 @@ $(document).ready(function() {
     root.style.setProperty("--playerLeftRight", e.target.value + "em");
   });
 
+  const slider4 = document.getElementById("distanceSlider");
+  slider4.addEventListener("input", (e) => {
+    root.style.setProperty("--sceneDistance", e.target.value + "em");
+  });
+
 });

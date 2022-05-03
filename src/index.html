@@ -5,22 +5,29 @@
 </head>
 <body>
   
-  <div id="cameraControls">
-    <div class="form-group" id="cameraAngleAboutY">
-      <label for="angleSlider">about Y-axis</label>
-      <input type="range" id="angleSlider" min="-180" max="180" value="0" />
+  <div id="controls">
+    <div id="cameraControls">
+      <div class="form-group" id="cameraAngleAboutY">
+        <label for="angleSlider">about Y-axis</label>
+        <input type="range" id="angleSlider" min="-180" max="180" value="0" />
+      </div>
+
+      <div class="form-group" id="leftRSlid">
+        <label for="leftRightSlider">left-right</label>
+        <input type="range" id="leftRightSlider" min="-50" max="50" value="0" />
+      </div>
+
+      <div class="form-group" id="distSlid">
+        <label for="distanceSlider">distance Z</label>
+        <input type="range" id="distanceSlider" min="-100" max="100" value="0" />
+      </div>
     </div>
 
-    <div class="form-group" id="leftRSlid">
-      <label for="leftRightSlider">left-right</label>
-      <input type="range" id="leftRightSlider" min="-50" max="50" value="0" />
-    </div>
-  </div>
-
-  <div id="playerControls">
-    <div class="form-group" id="playerleftRSlid">
-      <label for="playerleftRightSlider">Player L-R</label>
-      <input type="range" id="playerleftRightSlider" min="-50" max="50" value="0" />
+    <div id="playerControls">
+      <div class="form-group" id="playerleftRSlid">
+        <label for="playerleftRightSlider">Player L-R</label>
+        <input type="range" id="playerleftRightSlider" min="-50" max="50" value="0" />
+      </div>
     </div>
   </div>
 

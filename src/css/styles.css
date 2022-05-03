@@ -1,6 +1,7 @@
 :root {
   --sceneRotate: 0;
   --sceneLeftRight: 0;
+  --sceneDistance: -40em;
   --tireRotationRate: 1s;
   --floorRate: 5s;
   --playerLeftRight: 0em;
@@ -8,13 +9,14 @@
 
 body {
   background-color: #000;
-  min-height: 100vh;
+  height: 100vh;
+  /* width: 1080px; */
   display: flex;
   overflow:hidden;
   /* justify-content: center; */
   /* align-items: center; */
   font-size: 2.5em;
-  perspective: 23em;
+  perspective: 17em;
   perspective-origin: 50% 55%;
   position: relative;
 }
@@ -32,6 +34,9 @@ body {
 #cameraControls{
   /* display: none; */
 }
+#controls {
+  /* display: none; */
+}
 
 #leftRSlid {
   margin-left: 10%;
@@ -39,6 +44,10 @@ body {
 #playerleftRSlid {
   right: 10%;
   /* display: none; */
+}
+
+#distSlid {
+  left: 20%
 }
 
 .scene, #ground, #cyberCraft {
@@ -52,13 +61,13 @@ body {
 }
 
 .scene{
-  transform: rotateY( var(--sceneRotate)) translateX( var(--sceneLeftRight));
+  transform: translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotate)) ;
   /* transform: ); */
   /* top: 5%; */
 }
 
 #cyberCraft {
-  transform: translateZ(-23em) translateY(51.8em) translateX( calc(29.25em + var(--playerLeftRight)) );
+  transform: translateZ(35em) translateY(51.8em) translateX( calc(29.25em + var(--playerLeftRight)) );
   font-size: .5em;
 }
 
@@ -256,6 +265,16 @@ table {
 @keyframes floor3move {
   0%   {transform: rotateX(90deg) translateY(-200%)}
   100% {transform: rotateX(90deg) translateY(-200%)}
+}
+
+@keyframes floor4move {
+  0%   {transform: rotateX(90deg) translateY(-300%)}
+  100% {transform: rotateX(90deg) translateY(-300%)}
+}
+
+@keyframes floor5move {
+  0%   {transform: rotateX(90deg) translateY(-400%)}
+  100% {transform: rotateX(90deg) translateY(-400%)}
 } */
 
 
