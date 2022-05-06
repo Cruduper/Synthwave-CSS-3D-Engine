@@ -16,4 +16,5 @@
 1:56 - implementing "eco" mode in javascript. It currently disables a style and causes an entire div to not display
 2:53 - tried to move players coloring to it's own class that could be changed easily and quickly with javascript eventListeners, but box-shadow isn't displaying
 3:30 - modeling a palm tree out of HTML elements
+4:44 - integreting palm tree 3D model into scene...
 
