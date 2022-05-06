@@ -11,3 +11,4 @@
 5/6/22
 8:23 - watching linear algebra videos on youtube (math necessary to institute dynamic lighting)
 9:49 - implementing a button to turn off box-shadows off some elements, as this is causing an extreme GPU utilization and I want the site to be viewable on older gaming machines, but still want it to look cool with full effects on newer machines. Site probably still wont be viewable on machines without discrete graphics cards. 
+10:43 - trying to figure out which CSS style attributes are the most resource hoggy. Behavior is really weird and some box-shadows seem to use more resources than others, at different times??
