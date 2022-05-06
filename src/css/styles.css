@@ -1,9 +1,10 @@
 :root {
   --sceneRotate: 0;
   --sceneLeftRight: 0;
-  --sceneDistance: -40em;
+  --sceneDistance: -37em;
   --tireRotationRate: 1s;
   --floorRate: 5s;
+  --extraGlowRate: 2s;
   --playerLeftRight: 0em;
 }
 
@@ -18,7 +19,7 @@ body {
   font-size: 2.5em;
   perspective: 17em;
   perspective-origin: 50% 55%;
-  position: relative;
+  /* position: fixed; */
 }
 
 .form-group {
@@ -30,25 +31,16 @@ body {
   margin-left: 3%;
   z-index: 2;
 }
-
 #cameraControls{
   /* display: none; */
 }
 #controls {
-  /* display: none; */
+/* display: none; */
 }
 
-#leftRSlid {
-  margin-left: 10%;
-}
-#playerleftRSlid {
-  right: 10%;
-  /* display: none; */
-}
-
-#distSlid {
-  left: 20%
-}
+#leftRSlid { margin-left: 10%; }
+#playerleftRSlid {  right: 10%; }
+#distSlid { left: 20% }
 
 .scene, #ground, #cyberCraft {
   position: relative;
@@ -67,7 +59,7 @@ body {
 }
 
 #cyberCraft {
-  transform: translateZ(35em) translateY(51.8em) translateX( calc(29.25em + var(--playerLeftRight)) );
+  transform: translateZ(30em) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
   font-size: .5em;
 }
 
@@ -81,14 +73,8 @@ body {
 
 
 
-/***********    GLOW COLORS  *************/
-.pinkGlowCut {
-  /* border-collapse: collapse;
-  border: 1px solid #FCCF; 
-  box-shadow: 0 0 15px #F33C; */
-  /* background: rgba(255, 255, 255, .1);
-  color: rgba(0, 0, 0, .1); */
-  /* opacity: 1; */
+/***********    NON-FLOOR GLOW COLORS  *************/
+/* .pinkGlowCut {
   border-collapse: collapse;
   -webkit-filter: 
         drop-shadow(-4px -4px 0 #FCCF)
@@ -98,10 +84,10 @@ body {
         drop-shadow(-4px -4px 0 #FCCF)
         drop-shadow(4px 4px 0 #FCCF)
         drop-shadow( 0 0 15px #F33C);
-}
+} */
 
 .pinkGlow, #cyberCraft .face {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   border: 2px solid #FCCF; 
   box-shadow: 0 0 30px #F33C;
 
@@ -127,10 +113,10 @@ body {
 }
 
 #floorExtraGlow {
-/*   display: none; */
+  /* display: none; */
   opacity: .8;
-  animation-name: floor1move;
-  animation-duration: var(--tireRotationRate);
+  animation-name: glowFloorMove;
+  animation-duration:  var(--extraGlowRate) ;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -176,13 +162,15 @@ body {
   animation-iteration-count: infinite;
 }
 
-
+/* #floor1, #floor2, #floor3, #floor4, #floor5 {
+  display: none;
+} */
 
 
 
 table {
   border-collapse: collapse;
-/*   border-spacing: 0px; */
+  background-color: #0FCC0F1A;
   width: 100em;
   height: 55em;
 }
@@ -193,7 +181,9 @@ table {
   /* box-shadow: 0 0 .75em #8F8F; */
 }
 
-.vertLine {
+
+
+th {
   width: 2em;
   height: 2em;
   border-left: 3px solid #0D0F; 
@@ -203,10 +193,12 @@ table {
   padding: 0px;
 }
 
-#floorExtraGlow .vertLine {
-  border-top: none; 
-  /* box-shadow: none; */
-  /* clip-path: inset(25px 0px 25px 0px); */
+.vertLine {
+  /* box-shadow: 0 0 1em #8F8F; */
+}
+
+.vertLineGlowExtra {
+  box-shadow: 0 0 3em #9f4F;
 }
 
 .lastElementBorder  {
@@ -245,6 +237,13 @@ table {
 @keyframes floor5move {
   0%   {transform: rotateX(90deg) translateY(-400%)}
   100%   {transform: rotateX(90deg) translateY(100%)}
+}
+
+@keyframes glowFloorMove {
+  0%   {transform: rotateX(90deg) translateY(-400%); opacity: 1}
+  15%   {transform: rotateX(90deg) translateY(100%); opacity: 1}
+  15.001% {opacity: 0}
+  100% {opacity: 0}
 }
 
 /* #floorExtraGlow {
