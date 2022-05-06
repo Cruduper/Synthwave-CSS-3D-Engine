@@ -15,4 +15,5 @@
 11:52 - GPU utilization stays high sometimes after reverting changes. I'm wondering if the browser keeps old styles in a cache and continues to run those in the background? In order to see correct, updated GPU utilization data I can restart localhost in a new tab, or change browser dimensions several times, which seems to reset or update something. Lunch time!
 1:56 - implementing "eco" mode in javascript. It currently disables a style and causes an entire div to not display
 2:53 - tried to move players coloring to it's own class that could be changed easily and quickly with javascript eventListeners, but box-shadow isn't displaying
+3:30 - modeling a palm tree out of HTML elements
 
