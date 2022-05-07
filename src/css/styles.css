@@ -437,7 +437,7 @@ background-color:#fff;
 
 #palmTree {
 /*   display: none; */
-  animation-name: palmTreeMove1;
+  animation-name: palmTreeMove;
   animation-duration: calc( var(--floorRate));
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -446,9 +446,9 @@ background-color:#fff;
 
 @keyframes palmTreeMove {
   0% {transform:  translateZ(-500em) translateY(50em) translateX(-55em) rotateY(0deg) scale(10%)  }
-  50% {transform:  translateZ(100em) translateY(45em) translateX(-55em) rotateY(45deg) scaleY(200%)   }
+  50% {transform:  translateZ(100em) translateY(45em) translateX(-55em) rotateY(45deg) scaleY(175%)   }
   50.001% {transform:  translateZ(-500em) translateY(50em) translateX(135em) rotateY(-30deg) scale(10%)  }
-  100% {transform:  translateZ(100em) translateY(48em) translateX(155em) rotateY(-90deg) scaleY(200%)  }
+  100% {transform:  translateZ(100em) translateY(48em) translateX(155em) rotateY(-90deg) scaleY(175%)  }
 }
 
 
