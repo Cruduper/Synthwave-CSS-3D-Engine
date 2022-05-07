@@ -31,18 +31,34 @@ $(document).ready(function() {
   document.addEventListener('keydown', logKey);
   console.log(logKey);
   function logKey(key) {
-  switch(key.code) {
-    case 'KeyE':
-      document.querySelectorAll('.horLine > th').forEach( box => {
-        box.classList.toggle('vertLine');
-      });
+    switch(key.code) {
+      case 'KeyE':
+      {
+        document.querySelectorAll('.horLine > th').forEach( box => {
+          box.classList.toggle('vertLine');
+        });
+      
+        let exGlowVis = document.querySelector('#floorExtraGlow');
+        let disp = window.getComputedStyle(exGlowVis, null).display;
+        if (disp === "block"){
+          exGlowVis.style.display = "none";
+        }
+        else {
+          exGlowVis.style.display = "block";
+        }
+        //console.log("extraGlow display: " + window.getComputedStyle(exGlowVis, null).display);
+        
+
+        document.querySelectorAll('#cyberCraft .face').forEach( face => {
+          face.classList.toggle('playerColor');
+        });
+      }
       console.log("eco mode changed");
-      break;
-    default:
-      console.log("!");
+        break;
+      default:
+        console.log("!");
+    }
   }
-  return "done";
-}
 
   
   // document.getElementById("div1").classList.add("classToBeAdded");
