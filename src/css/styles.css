@@ -107,9 +107,14 @@ body {
   box-shadow: 0 0 30px #F33C;
 }
 
-#palmTree [class*="tree-cyl-"] .face{
+/* #palmTree [class*="tree-cyl-"] .face{
    border: 2px solid #FFDF;
    box-shadow: 0 0 45px #FAFF0FFF
+} */
+
+#palmTree .trunkColor {
+  border: 2px solid #FFDF;
+  box-shadow: 0 0 45px #FAFF0FFF
 }
 
 #palmTree .leafColor {
@@ -441,15 +446,17 @@ background-color:#fff;
 #palmTree {
 /*   display: none; */
   animation-name: palmTreeMove;
-  animation-duration: calc(0.66 * var(--floorRate));
+  animation-duration: calc( var(--floorRate));
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 
 @keyframes palmTreeMove {
-  from{transform:  translateZ(-500em) translateY(50em) translateX(-55em) rotateY(45deg)  }
-  to {transform:  translateZ(100em) translateY(45em) translateX(-55em) rotateY(45deg)  }
+  0% {transform:  translateZ(-500em) translateY(50em) translateX(-55em) rotateY(0deg) scale(10%)  }
+  50% {transform:  translateZ(100em) translateY(45em) translateX(-55em) rotateY(45deg) scaleY(200%)   }
+  50.001% {transform:  translateZ(-500em) translateY(50em) translateX(135em) rotateY(-30deg) scale(10%)  }
+  100% {transform:  translateZ(100em) translateY(48em) translateX(155em) rotateY(-90deg) scaleY(200%)  }
 }
 
 
