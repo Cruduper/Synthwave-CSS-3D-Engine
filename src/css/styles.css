@@ -92,14 +92,7 @@ body {
 } */
 
 #cyberCraft .face {
-  /* border-collapse: collapse; */
-  /* border: 2px solid #FCCF;
-  box-shadow: 0 0 30px #F33C; */
-  /* border: 2px solid #FCCF;
-  box-shadow: 0 0 30px #F33C; */
-   border: 2px solid #FCCF;
-  /* border: 2px solid #CDFE; 
-  box-shadow: 0 0 30px #38FF; */
+  border: 2px solid #FCCF;
 }
 
 #cyberCraft .playerColor {
@@ -107,18 +100,17 @@ body {
   box-shadow: 0 0 30px #F33C;
 }
 
-/* #palmTree [class*="tree-cyl-"] .face{
-   border: 2px solid #FFDF;
-   box-shadow: 0 0 45px #FAFF0FFF
-} */
-
+#palmTree [class*="tree-cyl-"] .face{
+  border: 2px solid #FFBA;
+}
 #palmTree .trunkColor {
-  border: 2px solid #FFDF;
-  box-shadow: 0 0 45px #FAFF0FFF
+  box-shadow: 0 0 45px #FAFF0FFF;
 }
 
-#palmTree .leafColor {
+#palmTree [class*="tree-pri"] .face{
   border: 2px solid #AFAF;
+}
+#palmTree .leafColor {
   box-shadow: 0 0 45px #9F0F;
 }
 
@@ -445,7 +437,7 @@ background-color:#fff;
 
 #palmTree {
 /*   display: none; */
-  animation-name: palmTreeMove;
+  animation-name: palmTreeMove1;
   animation-duration: calc( var(--floorRate));
   animation-timing-function: linear;
   animation-iteration-count: infinite;

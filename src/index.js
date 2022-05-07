@@ -52,6 +52,12 @@ $(document).ready(function() {
         document.querySelectorAll('#cyberCraft .face').forEach( face => {
           face.classList.toggle('playerColor');
         });
+        document.querySelectorAll("#palmTree [class*='prism']").forEach(face => {
+          face.classList.toggle("leafColor");
+        });
+        document.querySelectorAll("#palmTree [class*='cylinder']").forEach(face => {
+          face.classList.toggle("trunkColor");
+        });
       }
       console.log("eco mode changed");
         break;
