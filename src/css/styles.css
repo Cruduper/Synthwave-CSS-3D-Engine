@@ -1,24 +1,30 @@
 :root {
   --sceneRotate: 0;
   --sceneLeftRight: 0;
-  --sceneDistance: -32em;
+  --sceneDistance: -27em;
   --tireRotationRate: 1s;
   --floorRate: 5s;
   --extraGlowRate: 2s;
   --playerLeftRight: 0em;
 }
 
-body {
+body  {
+  background-color: #000F;
+}
+
+#viewport {
+  margin: auto;
   background-color: #000;
-  height: 100vh;
+  width: 1600px;
+  height: 900px;
   /* width: 1080px; */
   display: flex;
   overflow:hidden;
   /* justify-content: center; */
   /* align-items: center; */
   font-size: 2.5em;
-  perspective: 17em;
-  perspective-origin: 50% 55%;
+  perspective: 15em;
+  perspective-origin: 50% 50%;
   /* position: fixed; */
 }
 
@@ -53,13 +59,13 @@ body {
 }
 
 .scene{
-  transform: translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotate)) ;
+  transform: translateY(-10em) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotate)) ;
   /* transform: ); */
   /* top: 5%; */
 }
 
 #cyberCraft {
-  transform: translateZ(30em) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
+  transform: translateZ(23em) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
   font-size: .5em;
 }
 
