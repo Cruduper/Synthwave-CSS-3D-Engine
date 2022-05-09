@@ -25,29 +25,25 @@ function logKey(key) {
         
         if (key.type === 'keydown'){
           camAngle++;
-          if(camAngle === 1)
-          {
-            root.style.setProperty('--sceneDistance', -23 + "em");
-            root.style.setProperty('--sceneHeight', -10 + "em");
-            root.style.setProperty('--sceneRotateX', 0 + "deg");
-            root.style.setProperty('--sceneRotateY', 0 + "deg");
-            root.style.setProperty('--sceneRotateZ', 0 + "deg");
-            root.style.setProperty('--scenePerspective', 15 + "em");
-            root.style.setProperty('--scenePerspectiveOrigin', 50 + "%");
-            root.style.setProperty('--cyberCraftDistance', 13 + "em");
+          if(camAngle === 1){ 
+          setCameraAngle(-21, -10, 1, 0, 0, 15, 45, 12);
+          document.querySelectorAll('.floor').forEach( function (elem) {
+            elem.style.display = 'block';
+          }); 
           }
           else if (camAngle === 2){
-            root.style.setProperty('--sceneDistance', -27 + "em");
-            root.style.setProperty('--sceneHeight', -6 + "em");
-            root.style.setProperty('--sceneRotateX', -5 + "deg");
-            root.style.setProperty('--sceneRotateY', 0 + "deg");
-            root.style.setProperty('--sceneRotateZ', 0 + "deg");
-            root.style.setProperty('--scenePerspective', 17 + "em");
-            root.style.setProperty('--scenePerspectiveOrigin', 37 + "%");
-            root.style.setProperty('--cyberCraftDistance', 17 + "em");
+            setCameraAngle(-27, -6, -5, 0, 0, 17, 37, 17);
+          }
+          else if (camAngle === 3){
+            setCameraAngle(-27, -13, -15, -30, 0, 13, 37, 13);
+          }
+          else if (camAngle === 4){
+            setCameraAngle(-20, -3, 30, 0, 0, 17, 37, 17);
+            document.querySelectorAll('.floor').forEach( function (elem) {
+              elem.style.display = 'none';
+            });
             camAngle = 0;
           }
-          console.log(camAngle);
         }
         break;
       case 'KeyE':
@@ -160,6 +156,18 @@ function step(){
       done = false;
     } 
   }
+}
+
+function setCameraAngle(camDist, height, rotX, rotY, rotZ, perspect, perspectOrig, carDist){
+  root.style.setProperty('--sceneDistance', camDist + "em");
+  root.style.setProperty('--sceneHeight', height + "em");
+  root.style.setProperty('--sceneRotateX', rotX + "deg");
+  root.style.setProperty('--sceneRotateY', rotY + "deg");
+  root.style.setProperty('--sceneRotateZ', rotZ + "deg");
+  root.style.setProperty('--scenePerspective', perspect + "em");
+  root.style.setProperty('--scenePerspectiveOrigin', perspectOrig + "%");
+  root.style.setProperty('--cyberCraftDistance', carDist + "em");
+  
 }
 
 
