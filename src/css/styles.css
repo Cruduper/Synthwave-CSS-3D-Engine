@@ -1,13 +1,18 @@
 :root {
-  --sceneRotate: 0;
-  --sceneLeftRight: 0;
+  
   --tireRotationRate: 1s;
   --floorRate: 5s;
   --extraGlowRate: 2s;
   --playerLeftRight: 0em;
-  --sceneDistance: -23em;
-  --scenePerspective: 15em;
-  --scenePerspectiveOrigin: 50%;
+  --sceneLeftRight: 0;
+  --sceneDistance: -27em;
+  --sceneHeight: -6em;
+  --sceneRotateX: -5deg;
+  --sceneRotateY: 0deg;
+  --sceneRotateZ: 0deg;
+  --scenePerspective: 17em;
+  --scenePerspectiveOrigin: 37%;
+  --cyberCraftDistance: 17em;
 }
 
 body  {
@@ -61,13 +66,13 @@ body  {
 }
 
 .scene{
-  transform: translateY(-10em) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotate)) ;
+  transform: translateY( var(--sceneHeight) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ)) ;
   /* transform: ); */
   /* top: 5%; */
 }
 
 #cyberCraft {
-  transform: translateZ(13em) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
+  transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
   font-size: .5em;
 }
 
