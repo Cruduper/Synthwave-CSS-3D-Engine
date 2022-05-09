@@ -519,11 +519,11 @@ background-color:#fff;
 
 /************************* PALM TREE  *********************/
 .tree-cyl-1 .face, .tree-cyl-1 .side, .tree-cyl-2 .face, .tree-cyl-2 .side, .tree-cyl-3 .face, .tree-cyl-3 .side, .tree-cyl-4 .face, .tree-cyl-4 .side, .tree-cyl-5 .face, .tree-cyl-5 .side, .tree-cyl-6 .face, .tree-cyl-6 .side, .tree-cyl-7 .face, .tree-cyl-7 .side, .tree-cyl-8 .face, .tree-cyl-8 .side {
-  background-color:#FAFF6660;
+  background-color:#FAFF6600;
 }
 
 .tree-pri-1 .face, .tree-pri-2 .face, .tree-pri-3 .face, .tree-pri-4 .face {
-  background-color:#BCFF7666;
+  background-color:#BCFF7600;
 }
 
 
@@ -541,9 +541,9 @@ background-color:#fff;
 
 @keyframes palmTreeMove {
   0% {transform:  translateZ(-500em) translateY(50em) translateX(-55em) rotateY(0deg) scale(10%)  }
-  50% {transform:  translateZ(100em) translateY(45em) translateX(-55em) rotateY(45deg) scaleY(175%)   }
+  50% {transform:  translateZ(100em) translateY(45em) translateX(-55em) rotateY(45deg) scaleY(160%)   }
   50.001% {transform:  translateZ(-500em) translateY(50em) translateX(135em) rotateY(-30deg) scale(10%)  }
-  100% {transform:  translateZ(100em) translateY(48em) translateX(155em) rotateY(-90deg) scaleY(175%)  }
+  100% {transform:  translateZ(100em) translateY(48em) translateX(155em) rotateY(-90deg) scaleY(160%)  }
 }
 
 
