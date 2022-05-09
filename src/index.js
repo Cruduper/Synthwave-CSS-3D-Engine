@@ -16,6 +16,7 @@ let keyPress;
 function logKey(key) {
 
     keyPress = key;
+    
 
     switch(key.code) {
       case 'KeyE':
@@ -49,11 +50,22 @@ function logKey(key) {
       case 'KeyA':
         break;
       case 'ArrowLeft':
-        //console.log("in ArrowLeft case");
+        if (key.type === "keydown"){
+          document.getElementById('tireFrontLeft').classList.remove('leftTireLeftToCenter');
+          document.getElementById('tireFrontRight').classList.remove('rightTireLeftToCenter');
+          document.getElementById('tireFrontLeft').classList.add('leftTireTurnLeft');
+          document.getElementById('tireFrontRight').classList.add('rightTireTurnLeft');
+        }
+        else if (key.type === "keyup"){
+          document.getElementById('tireFrontLeft').classList.remove('leftTireTurnLeft');
+          document.getElementById('tireFrontRight').classList.remove('rightTireTurnLeft');
+          document.getElementById('tireFrontLeft').classList.add('leftTireLeftToCenter');
+          document.getElementById('tireFrontRight').classList.add('rightTireLeftToCenter');
+        }
         window.requestAnimationFrame(step)
         break;
       case 'ArrowRight':
-        //console.log("in ArrowRight case");
+
         window.requestAnimationFrame(step)
         break;
       default:
@@ -124,6 +136,23 @@ function step(){
   //   \!done && window.requestAnimationFrame(() => { step( Date.now(), key)});
   // }
 }
+
+
+// function animateCar(key){
+//   switch (key.code) {
+//     case 'ArrowLeft':
+
+//       if (key.type === "keydown"){
+//         document.getElementById('tireFrontLeft').addClass('leftTireTurnLeft');
+//       }
+//       else if (key.type === "keyup"){
+//         document.getElementById('tireFrontRight').addClass('rightTireTurnLeft');
+//       }
+//       break;
+//     default:
+//       break;
+//   }
+// }
 
 
 
