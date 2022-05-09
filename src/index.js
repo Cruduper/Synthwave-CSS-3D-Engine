@@ -10,6 +10,7 @@ const root = document.documentElement;
 let pressedKeys = {};
 let done = false; //let previousTimeStamp; //const element = document.getElementById('cyberCraft'); ;
 let keyPress;
+let camAngle = 1;
 
 
 
@@ -19,6 +20,36 @@ function logKey(key) {
     
 
     switch(key.code) {
+      case 'KeyC':
+        console.log(camAngle);
+        
+        if (key.type === 'keydown'){
+          camAngle++;
+          if(camAngle === 1)
+          {
+            root.style.setProperty('--sceneDistance', -23 + "em");
+            root.style.setProperty('--sceneHeight', -10 + "em");
+            root.style.setProperty('--sceneRotateX', 0 + "deg");
+            root.style.setProperty('--sceneRotateY', 0 + "deg");
+            root.style.setProperty('--sceneRotateZ', 0 + "deg");
+            root.style.setProperty('--scenePerspective', 15 + "em");
+            root.style.setProperty('--scenePerspectiveOrigin', 50 + "%");
+            root.style.setProperty('--cyberCraftDistance', 13 + "em");
+          }
+          else if (camAngle === 2){
+            root.style.setProperty('--sceneDistance', -27 + "em");
+            root.style.setProperty('--sceneHeight', -6 + "em");
+            root.style.setProperty('--sceneRotateX', -5 + "deg");
+            root.style.setProperty('--sceneRotateY', 0 + "deg");
+            root.style.setProperty('--sceneRotateZ', 0 + "deg");
+            root.style.setProperty('--scenePerspective', 17 + "em");
+            root.style.setProperty('--scenePerspectiveOrigin', 37 + "%");
+            root.style.setProperty('--cyberCraftDistance', 17 + "em");
+            camAngle = 0;
+          }
+          console.log(camAngle);
+        }
+        break;
       case 'KeyE':
         if (key.type === 'keydown')
         {
@@ -47,8 +78,7 @@ function logKey(key) {
         console.log("eco mode changed");
         // console.log(key);
         break;
-      case 'KeyA':
-        break;
+      
       case 'ArrowLeft':
         if (key.type === "keydown"){
           document.getElementById('tireFrontLeft').className = "";
@@ -146,7 +176,7 @@ $(document).ready(function() {
 
   const slider = document.getElementById("angleSlider");
   slider.addEventListener("input", (e) => {
-    root.style.setProperty("--sceneRotate", e.target.value + "deg");
+    root.style.setProperty("--sceneRotateY", e.target.value + "deg");
   });
   const slider2 = document.getElementById("leftRightSlider");
   slider2.addEventListener("input", (e) => {
@@ -161,7 +191,4 @@ $(document).ready(function() {
     root.style.setProperty("--sceneDistance", e.target.value + "em");
   });
 
-  if (root === 1) {// TODO: nonsense delete
-    step();
-  }
 });
