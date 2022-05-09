@@ -5,14 +5,14 @@
   --extraGlowRate: 2s;
   --playerLeftRight: 0em;
   --sceneLeftRight: 0;
-  --sceneDistance: -27em;
-  --sceneHeight: -6em;
-  --sceneRotateX: -5deg;
+  --sceneDistance: -21em;
+  --sceneHeight: -10em;
+  --sceneRotateX: 1deg;
   --sceneRotateY: 0deg;
   --sceneRotateZ: 0deg;
-  --scenePerspective: 17em;
-  --scenePerspectiveOrigin: 37%;
-  --cyberCraftDistance: 17em;
+  --scenePerspective: 15em;
+  --scenePerspectiveOrigin: 45%;
+  --cyberCraftDistance: 12em;
 }
 
 body  {
@@ -136,7 +136,7 @@ body  {
 
 /***********   GROUND STUFF   **********/
 
-.floor  {
+.floor, .floorAlt{
   position: absolute;
   left: -30em;
 /*   width: 30em;
