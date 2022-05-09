@@ -51,21 +51,32 @@ function logKey(key) {
         break;
       case 'ArrowLeft':
         if (key.type === "keydown"){
-          document.getElementById('tireFrontLeft').classList.remove('leftTireLeftToCenter');
-          document.getElementById('tireFrontRight').classList.remove('rightTireLeftToCenter');
+          document.getElementById('tireFrontLeft').className = "";
+          document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnLeft');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnLeft');
         }
         else if (key.type === "keyup"){
-          document.getElementById('tireFrontLeft').classList.remove('leftTireTurnLeft');
-          document.getElementById('tireFrontRight').classList.remove('rightTireTurnLeft');
+          document.getElementById('tireFrontLeft').className = "";
+          document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireLeftToCenter');
           document.getElementById('tireFrontRight').classList.add('rightTireLeftToCenter');
         }
         window.requestAnimationFrame(step)
         break;
       case 'ArrowRight':
-
+        if (key.type === "keydown"){
+          document.getElementById('tireFrontLeft').className = "";
+          document.getElementById('tireFrontRight').className = "";
+          document.getElementById('tireFrontLeft').classList.add('leftTireTurnRight');
+          document.getElementById('tireFrontRight').classList.add('rightTireTurnRight');
+        }
+        else if (key.type === "keyup"){
+          document.getElementById('tireFrontLeft').className = "";
+          document.getElementById('tireFrontRight').className = "";
+          document.getElementById('tireFrontLeft').classList.add('leftTireRightToCenter');
+          document.getElementById('tireFrontRight').classList.add('rightTireRightToCenter');
+        }
         window.requestAnimationFrame(step)
         break;
       default:
@@ -119,40 +130,12 @@ function step(){
       done = false;
     } 
   }
-  // else  {
-  //   window.requestAnimationFrame(step);
-  // }
-
-  // if (pressedKeys[key.code] === true) {
-  //   Math.min() is used here to make sure the element stops at exactly 200px
-  //   const count = -1 //Math.max(-1 * elapsed, -50);
-  //   element.style.transform = 'translateX(' + count + 'px)';
-  //   root.style.setProperty('--playerLeftRight', (currPosition + count) + "em");
-    
-  // }
-
-  // if (pressedKeys[key.code] === false) { // Stop the animation after 2 seconds
-  //   previousTimeStamp = timestamp
-  //   \!done && window.requestAnimationFrame(() => { step( Date.now(), key)});
-  // }
 }
 
 
-// function animateCar(key){
-//   switch (key.code) {
-//     case 'ArrowLeft':
 
-//       if (key.type === "keydown"){
-//         document.getElementById('tireFrontLeft').addClass('leftTireTurnLeft');
-//       }
-//       else if (key.type === "keyup"){
-//         document.getElementById('tireFrontRight').addClass('rightTireTurnLeft');
-//       }
-//       break;
-//     default:
-//       break;
-//   }
-// }
+
+
 
 
 
@@ -177,4 +160,8 @@ $(document).ready(function() {
   slider4.addEventListener("input", (e) => {
     root.style.setProperty("--sceneDistance", e.target.value + "em");
   });
+
+  if (root === 1) {// TODO: nonsense delete
+    step();
+  }
 });
