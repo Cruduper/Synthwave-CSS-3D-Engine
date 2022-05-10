@@ -32,10 +32,10 @@ function logKey(key) {
           }); 
           }
           else if (camAngle === 2){
-            setCameraAngle(-27, -6, -5, 0, 0, 17, 37, 17);
+            setCameraAngle(-27, -6, -5, 0, 0, 11, 37, 17);
           }
           else if (camAngle === 3){
-            setCameraAngle(-27, -13, -15, -30, 0, 13, 37, 13);
+            setCameraAngle(-27, -13, -15, -30, 0, 11, 37, 13);
           }
           else if (camAngle === 4){
             setCameraAngle(-20, -3, 30, 0, 0, 17, 37, 17);
