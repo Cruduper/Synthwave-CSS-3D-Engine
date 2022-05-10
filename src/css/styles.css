@@ -39,6 +39,7 @@ body  {
   margin-left: 3%;
   z-index: 2;
 }
+
 #cameraControls{
   display: none;
 }
@@ -83,14 +84,6 @@ body  {
 
 
 
-
-
-
-
-
-
-
-
           /***********    NON-FLOOR GLOW COLORS  *************/
 
 #cyberCraft .face {
@@ -118,11 +111,6 @@ body  {
 
 
 
-
-
-
-
-
           /***********   FLOOR STUFF   **********/
 
 .floor, .floorAlt{
@@ -131,59 +119,6 @@ body  {
   margin: 0px;
   padding: 0px;
 }
-
-#floorExtraGlow {
-  /* display: none; */
-  opacity: .8;
-  animation-name: glowFloorMove;
-  animation-duration:  var(--extraGlowRate) ;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-#floor1 {
-  /* display: none; */
-  animation-name: floor1move;
-  animation-duration: var(--floorRate);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-#floor2 {
-  /* display: none; */
-  animation-name: floor2move;
-  animation-duration: var(--floorRate);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-#floor3 {
-  /* display: none; */
-  animation-name: floor3move;
-  animation-duration: var(--floorRate);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-#floor4 {
-  /* display: none; */
-  animation-name: floor4move;
-  animation-duration: var(--floorRate);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-#floor5 {
-  /* display: none; */
-  animation-name: floor5move;
-  animation-duration: var(--floorRate);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-/* #floor1, #floor2, #floor3, #floor4, #floor5 {
-  display: none;
-} */
 
 table {
   border-collapse: collapse;
@@ -223,39 +158,80 @@ th {
 
 
           /************      GROUND ANIMATION     *******************/
+
+
+#floorExtraGlow {
+  /* display: none; */
+  opacity: .8;
+  animation-name: glowFloorMove;
+  animation-duration:  var(--extraGlowRate) ;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#floor1 {
+  /* display: none; */
+  animation-name: floor1move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#floor2 {
+  /* display: none; */
+  animation-name: floor2move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#floor3 {
+  /* display: none; */
+  animation-name: floor3move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#floor4 {
+  /* display: none; */
+  animation-name: floor4move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#floor5 {
+  /* display: none; */
+  animation-name: floor5move;
+  animation-duration: var(--floorRate);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
 @keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
   19.999% {transform: rotateX(90deg) translateY(100%); }
   20%   {transform: rotateX(90deg) translateY(-400%); }
   100% {transform: rotateX(90deg) translateY(0%); }
 }
-
 @keyframes floor2move {
   0%   {transform: rotateX(90deg) translateY(-100%)}
   39.999% {transform: rotateX(90deg) translateY(100%)}
   40%   {transform: rotateX(90deg) translateY(-400%)}
   100% {transform: rotateX(90deg) translateY(-100%)}
 }
-
 @keyframes floor3move {
   0%   {transform: rotateX(90deg) translateY(-200%)}
   59.999% {transform: rotateX(90deg) translateY(100%)}
   60%   {transform: rotateX(90deg) translateY(-400%)}
   100%   {transform: rotateX(90deg) translateY(-200%)}
 }
-
 @keyframes floor4move {
   0%   {transform: rotateX(90deg) translateY(-300%)}
   79.999%   {transform: rotateX(90deg) translateY(100%)}
   80%   {transform: rotateX(90deg) translateY(-400%)}
   100%   {transform: rotateX(90deg) translateY(-300%)}
 }
-
 @keyframes floor5move {
   0%   {transform: rotateX(90deg) translateY(-400%)}
   100%   {transform: rotateX(90deg) translateY(100%)}
 }
-
 @keyframes glowFloorMove {
   0%   {transform: rotateX(90deg) translateY(-400%); opacity: 1}
   25%   {transform: rotateX(90deg) translateY(105%); opacity: 1}
@@ -263,7 +239,7 @@ th {
   100% {opacity: 0}
 }
 
-/* ***********ENABLE BELOW TO STOP GROUND ANIMATIONS****************** */
+          /************ENABLE BELOW TO STOP GROUND ANIMATIONS*******************/
 /* @keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
   100%   {transform: rotateX(90deg) translateY(0%);}
@@ -291,15 +267,10 @@ th {
 
 
 
-
-
-
-
     /****************************     CyberCar     ************************************/
 
 
-
-          /************* TIRE ROTATE ANIMATIONS **************/
+          /************* CAR COLORING **************/
  .cyl-2 .face, .cyl-2 .side, 
 .cyl-3 .face, .cyl-3 .side, .cyl-4 .face, .cyl-4 .side, 
 .cyl-5 .face, .cyl-5 .side  {/**** tires ****/
@@ -352,14 +323,69 @@ background-color:#fff;
   background-color:#FFF1;
 }
 
- /******* enable for pure wireframe mode ********/
+          /******* enable for pure wireframe mode ********/
 [class*="cyl"] .face, [class*="cub"] .face, [class*="pri"] .face{
   background-color: #F455;
 }
 
 
 
-          /************* TIRE ROTATE ANIMATIONS **************/
+          /************* TIRE L/R ROTATE ANIMATIONS **************/
+
+.leftTireTurnLeft  {
+  animation-name: leftTireTurnLeft;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.leftTireLeftToCenter {
+  animation-name: leftTireLeftToCenter;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.leftTireTurnRight  {
+  animation-name: leftTireTurnRight;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.leftTireRightToCenter {
+  animation-name: leftTireRightToCenter;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+
+
+.rightTireTurnLeft  {
+  animation-name: rightTireTurnLeft;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.rightTireLeftToCenter  {
+  animation-name: rightTireLeftToCenter;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.rightTireTurnRight  {
+  animation-name: rightTireTurnRight;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.rightTireRightToCenter  {
+  animation-name: rightTireRightToCenter;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+
+
+
+          /************* TIRE SPIN ANIMATIONS **************/
 .tireFrontLeft {
 /*   display: none; */
   animation-name: tireSpinFrontLeft;
@@ -388,71 +414,18 @@ background-color:#fff;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-.leftTireTurnLeft  {
-  animation-name: leftTireTurnLeft;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-.rightTireTurnLeft  {
-  animation-name: rightTireTurnLeft;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-.leftTireLeftToCenter {
-  animation-name: leftTireLeftToCenter;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-.rightTireLeftToCenter  {
-  animation-name: rightTireLeftToCenter;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-
-.leftTireTurnRight  {
-  animation-name: leftTireTurnRight;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-.rightTireTurnRight  {
-  animation-name: rightTireTurnRight;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-.leftTireRightToCenter {
-  animation-name: leftTireRightToCenter;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-.rightTireRightToCenter  {
-  animation-name: rightTireRightToCenter;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier();
-  animation-fill-mode: forwards;
-}
-
 @keyframes tireSpinFrontLeft {
   from{transform:  translate3D(1.5em, 0.5em, 0em) rotateZ(90deg) rotateY(0deg)  }
   to {transform:  translate3D(1.5em, 0.5em, 0em) rotateZ(90deg) rotateY(-360deg)  }
 }
-
 @keyframes tireSpinBackLeft {
   from{transform:  translate3D(1.5em, 0em, 26em) rotateZ(90deg) rotateY(0deg)  }
   to {transform:  translate3D(1.5em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
 }
-
 @keyframes tireSpinFrontRight {
   from{transform: translate3D(18em, 0.5em, 0em) rotateZ(90deg) rotateY(0deg)   }
   to {transform:  translate3D(18em, 0.5em, 0em) rotateZ(90deg) rotateY(-360deg)  }
 }
-
 @keyframes tireSpinBackRight {
   from{transform: translate3D(18em, 0em, 26em) rotateZ(90deg) rotateY(0deg)   }
   to {transform:  translate3D(18em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
@@ -500,7 +473,6 @@ background-color:#fff;
 
 
 
-
     /************************* PALM TREE  *********************/
 
 .tree-cyl-1 .face, .tree-cyl-1 .side, .tree-cyl-2 .face, .tree-cyl-2 .side, .tree-cyl-3 .face, .tree-cyl-3 .side, .tree-cyl-4 .face, .tree-cyl-4 .side, .tree-cyl-5 .face, .tree-cyl-5 .side, .tree-cyl-6 .face, .tree-cyl-6 .side, .tree-cyl-7 .face, .tree-cyl-7 .side, .tree-cyl-8 .face, .tree-cyl-8 .side {
@@ -519,7 +491,6 @@ background-color:#fff;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-
 
 @keyframes palmTreeMove {
   0% {transform:  translateZ(-500em) translateY(50em) translateX(-55em) rotateY(0deg) scale(10%)  }
