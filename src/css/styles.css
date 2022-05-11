@@ -1,5 +1,6 @@
 :root {
   --tireRotationRate: 1s;
+  --tireTurnDegrees: 20deg;
   --floorRate: 5s;
   --extraGlowRate: 2s;
   --playerLeftRight: 0em;
@@ -86,8 +87,7 @@ body  {
 }
 
 
-
-          /***********    NON-FLOOR GLOW COLORS  *************/
+    /***********    NON-FLOOR GLOW COLORS  *************/
 #cyberCraft .face {
   border: 2px solid #FCCF;
 }
@@ -112,7 +112,7 @@ body  {
 }
 
 
-     /*********************     FLOOR      *************************/
+    /*********************!     FLOOR      !*************************/
 
           /*********** FLOOR STYLING CLASSES **********/
 .floor, .floorAlt {
@@ -240,7 +240,7 @@ th {
   100% {opacity: 0}
 }
 
-          /************ENABLE BELOW TO STOP GROUND ANIMATIONS*******************/
+    /************! [enable to stop ground animations] !*******************/
 /* @keyframes floor1move {
   0%   {transform: rotateX(90deg) translateY(0%);}
   100%   {transform: rotateX(90deg) translateY(0%);}
@@ -264,7 +264,7 @@ th {
 
 
 
-    /****************************     CyberCar     ************************************/
+    /****************************!     CyberCar     !************************************/
 
 
           /************* CAR STYLING CLASSES **************/
@@ -319,16 +319,27 @@ background-color:#fff;
 .cyl-8 .face, .cyl-8 .side { /** steering wheel **/
   background-color:#FFF1;
 }
-
-          /***************!     [ enable for pure wireframe mode ]     !****************/
+    /***************! [enable for pure wireframe mode ] !****************/
 [class*="cyl"] .face, [class*="cub"] .face, [class*="pri"] .face{
   background-color: #F455;
 }
 
 
+      /***********************   CAR BOOST ANIMATIONS   ***********************/
 
-      /*************   CAR TURN ANIMATION CLASSES   **************/
+    /************ CAR BOOST CLASSES ************/
 
+
+
+    /************ CAR BOOST KEYFRAMES ************/
+
+
+
+
+
+
+
+      /*************   CAR TURN LEFT/RIGHT ANIMATIONS   **************/
 
           /********* CAR TURN LEFT ANIMATION CLASSES *********/
 .leftTireTurnLeft  {
@@ -414,18 +425,18 @@ background-color:#fff;
           /************* CAR TURN LEFT ANIMATION KEYFRAMES ***************/
 @keyframes leftTireTurnLeft {
   0% {transform:   rotateY(0deg)}
-  100% {transform:   rotateY(20deg) translate3D(-.75em, 0.25em, 1em)}
+  100% {transform:   rotateY(var(--tireTurnDegrees)) translate3D(-.75em, 0.25em, 1em)}
 }
 @keyframes leftTireLeftToCenter {  
-  0% {transform:   rotateY(20deg) translate3D(-.75em, 0.25em, 1em)}
+  0% {transform:   rotateY(var(--tireTurnDegrees)) translate3D(-.75em, 0.25em, 1em)}
   100% {transform:   rotateY(0deg)}
 }
 @keyframes leftTireTurnRight {
   0% {transform:   rotateY(0deg)}
-  100% {transform:   rotateY(-20deg) translate3D(-.75em, 0.25em, -1em)}
+  100% {transform:   rotateY(calc(-1 * var(--tireTurnDegrees))) translate3D(-.75em, 0.25em, -1em)}
 }
 @keyframes leftTireRightToCenter {  
-  0% {transform:   rotateY(-20deg) translate3D(-.75em, 0.25em, -1em)}
+  0% {transform:   rotateY(calc(-1 * var(--tireTurnDegrees))) translate3D(-.75em, 0.25em, -1em)}
   100% {transform:   rotateY(0deg)}
 }
 @keyframes carBodyTurnLeft{
@@ -518,7 +529,7 @@ background-color:#fff;
 
 
 
-    /*************************     PALM TREE     *************************/
+    /*************************!     PALM TREE     !*************************/
 
           /************* TREE STYLING CLASSES *************/
 .tree-cyl-1 .face, .tree-cyl-1 .side, .tree-cyl-2 .face, .tree-cyl-2 .side, .tree-cyl-3 .face, .tree-cyl-3 .side, .tree-cyl-4 .face, .tree-cyl-4 .side, .tree-cyl-5 .face, .tree-cyl-5 .side, .tree-cyl-6 .face, .tree-cyl-6 .side, .tree-cyl-7 .face, .tree-cyl-7 .side, .tree-cyl-8 .face, .tree-cyl-8 .side {
