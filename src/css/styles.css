@@ -13,6 +13,8 @@
   --scenePerspectiveOrigin: 45%;
   --cyberCraftDistance: 12em;
   --carRotateSpeed: 0.2s;
+  --carRotateDegrees: 7deg;
+  --carRotateZShift: 2em; 
 }
 
 body  {
@@ -419,7 +421,7 @@ background-color:#fff;
 
 
 
-    /************* TIRE L/R ROTATION ANIMATIONS **************/
+    /************* TURN LEFT ANIMATIONS **************/
 
 @keyframes leftTireTurnLeft {
   0% {transform:   rotateY(0deg)}
@@ -437,8 +439,17 @@ background-color:#fff;
   0% {transform:   rotateY(-20deg) translate3D(-.75em, 0.25em, -1em)}
   100% {transform:   rotateY(0deg)}
 }
+@keyframes carBodyTurnLeft{
+  0% {transform: translateZ( var(--cyberCraftDistance)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+  100% {transform: translateZ(  calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight))) rotateY( var(--carRotateDegrees) )}
+}
+@keyframes carBodyLeftToCenter{
+  0% {transform: translateZ(  calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(var(--carRotateDegrees))}
+  100% {transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+}
 
 
+    /************* TURN RIGHT ANIMATIONS **************/
 
 @keyframes rightTireTurnLeft  {
   0% {transform:  rotateY(0deg)}
@@ -456,10 +467,14 @@ background-color:#fff;
   0% {transform:  rotateY(-20deg) translate3D(-.5em, 0.25em, -5.75em)}
   100% {transform:   rotateY(0deg)}
 }
-
-
-
-
+@keyframes carBodyTurnRight{
+  0% {transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+  100% {transform: translateZ( calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight))) rotateY( calc(-1 * var(--carRotateDegrees)) )}
+}
+@keyframes carBodyRightToCenter{
+  0% {transform: translateZ(  calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY( calc(-1 * var(--carRotateDegrees)) )}
+  100% {transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+}
 
 
 
