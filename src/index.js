@@ -11,7 +11,13 @@ let pressedKeys = {};
 let done = false; //let previousTimeStamp; //const element = document.getElementById('cyberCraft'); ;
 let keyPress;
 let camAngle = 1;
-
+window.onkeyup = function(e) { pressedKeys[e.code] = false; logKey(e);}
+window.onkeydown = function(e) { 
+  if (pressedKeys[e.code] === false || pressedKeys[e.code] === undefined){
+    pressedKeys[e.code] = true;
+    logKey(e);
+  }
+}
 
 
 function logKey(key) {
@@ -20,9 +26,13 @@ function logKey(key) {
     
 
     switch(key.code) {
+      case 'ArrowUp':
+        if (key.type === 'keydown'){
+          console.log(key.code);
+          document.getElementById('cyberCraft').classList.toggle('boostCar');
+        }
+        break;
       case 'KeyC':
-        console.log(camAngle);
-        
         if (key.type === 'keydown'){
           camAngle++;
           if(camAngle === 1){ 
@@ -119,18 +129,6 @@ function logKey(key) {
 }
 
 
-
-
-window.onkeyup = function(e) { pressedKeys[e.code] = false; logKey(e);}
-window.onkeydown = function(e) { 
-  if (pressedKeys[e.code] === false || pressedKeys[e.code] === undefined){
-    pressedKeys[e.code] = true;
-    logKey(e);
-  }
-
-  
-}
-
 function step(){
   //const elapsed = timestamp - start;
   let playerMove; 
@@ -177,10 +175,6 @@ function setCameraAngle(camDist, height, rotX, rotY, rotZ, perspect, perspectOri
   root.style.setProperty('--carZShift', carDist + "em");
   
 }
-
-
-
-
 
 
 
