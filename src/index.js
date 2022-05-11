@@ -77,12 +77,16 @@ function logKey(key) {
       
       case 'ArrowLeft':
         if (key.type === "keydown"){
+          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.add('carBodyTurnLeft')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnLeft');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnLeft');
         }
         else if (key.type === "keyup"){
+          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.add('carBodyLeftToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireLeftToCenter');
@@ -92,12 +96,16 @@ function logKey(key) {
         break;
       case 'ArrowRight':
         if (key.type === "keydown"){
+          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.add('carBodyTurnRight')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnRight');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnRight');
         }
         else if (key.type === "keyup"){
+          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.add('carBodyRightToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireRightToCenter');
