@@ -365,7 +365,7 @@ background-color:#fff;
   transform-origin: right center 0em;
   animation-name: carBodyTurnLeft;
   animation-duration: var(--carRotateSpeed);
-  animation-timing-function: ease-out;
+  animation-timing-function: cubic-bezier();
   animation-fill-mode: forwards;
 }
 .carBodyLeftToCenter{
@@ -402,6 +402,21 @@ background-color:#fff;
   animation-timing-function: cubic-bezier();
   animation-fill-mode: forwards;
 }
+.carBodyTurnRight{
+  transform-origin: 18em center 0em;
+  animation-name: carBodyTurnRight;
+  animation-duration: var(--carRotateSpeed);
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+.carBodyRightToCenter{
+  transform-origin: 18em center 0em;
+  animation-name: carBodyRightToCenter;
+  animation-duration: var(--carRotateSpeed);
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+}
+
 
 
     /************* TIRE L/R ROTATION ANIMATIONS **************/
