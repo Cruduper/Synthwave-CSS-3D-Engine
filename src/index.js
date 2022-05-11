@@ -174,7 +174,7 @@ function setCameraAngle(camDist, height, rotX, rotY, rotZ, perspect, perspectOri
   root.style.setProperty('--sceneRotateZ', rotZ + "deg");
   root.style.setProperty('--scenePerspective', perspect + "em");
   root.style.setProperty('--scenePerspectiveOrigin', perspectOrig + "%");
-  root.style.setProperty('--cyberCraftDistance', carDist + "em");
+  root.style.setProperty('--carZShift', carDist + "em");
   
 }
 

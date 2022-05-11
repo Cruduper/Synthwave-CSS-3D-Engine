@@ -11,7 +11,7 @@
   --sceneRotateZ: 0deg;
   --scenePerspective: 15em;
   --scenePerspectiveOrigin: 45%;
-  --cyberCraftDistance: 12em;
+  --carZShift: 12em;
   --carRotateSpeed: 0.2s;
   --carRotateDegrees: 7deg;
   --carRotateZShift: 2em; 
@@ -76,7 +76,7 @@ body  {
 }
 
 #cyberCraft {
-  transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
+  transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
   font-size: .5em;
 }
 
@@ -440,12 +440,12 @@ background-color:#fff;
   100% {transform:   rotateY(0deg)}
 }
 @keyframes carBodyTurnLeft{
-  0% {transform: translateZ( var(--cyberCraftDistance)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
-  100% {transform: translateZ(  calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight))) rotateY( var(--carRotateDegrees) )}
+  0% {transform: translateZ( var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+  100% {transform: translateZ(  calc(var(--carZShift) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight))) rotateY( var(--carRotateDegrees) )}
 }
 @keyframes carBodyLeftToCenter{
-  0% {transform: translateZ(  calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(var(--carRotateDegrees))}
-  100% {transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+  0% {transform: translateZ(  calc(var(--carZShift) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(var(--carRotateDegrees))}
+  100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
 }
 
 
@@ -468,12 +468,12 @@ background-color:#fff;
   100% {transform:   rotateY(0deg)}
 }
 @keyframes carBodyTurnRight{
-  0% {transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
-  100% {transform: translateZ( calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight))) rotateY( calc(-1 * var(--carRotateDegrees)) )}
+  0% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+  100% {transform: translateZ( calc(var(--carZShift) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight))) rotateY( calc(-1 * var(--carRotateDegrees)) )}
 }
 @keyframes carBodyRightToCenter{
-  0% {transform: translateZ(  calc(var(--cyberCraftDistance) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY( calc(-1 * var(--carRotateDegrees)) )}
-  100% {transform: translateZ( var(--cyberCraftDistance) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
+  0% {transform: translateZ(  calc(var(--carZShift) + var(--carRotateZShift)) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY( calc(-1 * var(--carRotateDegrees)) )}
+  100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))  rotateY(0deg)}
 }
 
 
