@@ -119,6 +119,10 @@ function logKey(key) {
         case 'ArrowUp':
         if (key.type === 'keydown'){
           document.getElementById('cyberCraft').classList.add('boostCar');
+          // document.getElementById('cyberCraft').classList.add('boostCarGlow');
+          document.querySelectorAll('#cyberCraft .face').forEach( face => {
+            face.classList.add('boostCarGlow');
+          });
         }
         break;
       default:
@@ -201,7 +205,11 @@ $(document).ready(function() {
       car.classList.remove('boostCar', 'carBodyRightToCenter', 'carBodyLeftToCenter');
   });
 
-});
-
-
-
+  car.querySelector('.face').addEventListener("animationend", (event)=>{
+    if(event.animationName === 'boostCarGlow'){
+      car.querySelectorAll('#cyberCraft .face').forEach( face => {
+        face.classList.remove('boostCarGlow');
+      });
+    }
+  });
+})
