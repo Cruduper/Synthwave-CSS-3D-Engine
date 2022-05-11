@@ -6,9 +6,9 @@ import './css/styles.css';
 
 
 const root = document.documentElement;
-//let start;
+const car = document.getElementById("cyberCraft");
 let pressedKeys = {};
-let done = false; //let previousTimeStamp; //const element = document.getElementById('cyberCraft'); ;
+let done = false;
 let keyPress;
 let camAngle = 1;
 window.onkeyup = function(e) { pressedKeys[e.code] = false; logKey(e);}
@@ -24,14 +24,7 @@ function logKey(key) {
 
     keyPress = key;
     
-
     switch(key.code) {
-      case 'ArrowUp':
-        if (key.type === 'keydown'){
-          console.log(key.code);
-          document.getElementById('cyberCraft').classList.toggle('boostCar');
-        }
-        break;
       case 'KeyC':
         if (key.type === 'keydown'){
           camAngle++;
@@ -87,7 +80,7 @@ function logKey(key) {
       
       case 'ArrowLeft':
         if (key.type === "keydown"){
-          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
           document.getElementById('cyberCraft').classList.add('carBodyTurnLeft')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
@@ -95,7 +88,7 @@ function logKey(key) {
           document.getElementById('tireFrontRight').classList.add('rightTireTurnLeft');
         }
         else if (key.type === "keyup"){
-          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
           document.getElementById('cyberCraft').classList.add('carBodyLeftToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
@@ -106,7 +99,7 @@ function logKey(key) {
         break;
       case 'ArrowRight':
         if (key.type === "keydown"){
-          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
           document.getElementById('cyberCraft').classList.add('carBodyTurnRight')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
@@ -114,7 +107,7 @@ function logKey(key) {
           document.getElementById('tireFrontRight').classList.add('rightTireTurnRight');
         }
         else if (key.type === "keyup"){
-          document.getElementById('cyberCraft').className = "";
+          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
           document.getElementById('cyberCraft').classList.add('carBodyRightToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
@@ -122,6 +115,11 @@ function logKey(key) {
           document.getElementById('tireFrontRight').classList.add('rightTireRightToCenter');
         }
         window.requestAnimationFrame(step)
+        break;
+        case 'ArrowUp':
+        if (key.type === 'keydown'){
+          document.getElementById('cyberCraft').classList.add('boostCar');
+        }
         break;
       default:
         // console.log("!");
@@ -173,11 +171,7 @@ function setCameraAngle(camDist, height, rotX, rotY, rotZ, perspect, perspectOri
   root.style.setProperty('--scenePerspective', perspect + "em");
   root.style.setProperty('--scenePerspectiveOrigin', perspectOrig + "%");
   root.style.setProperty('--carZShift', carDist + "em");
-  
 }
-
-
-
 
 
 
@@ -201,4 +195,13 @@ $(document).ready(function() {
     root.style.setProperty("--sceneDistance", e.target.value + "em");
   });
 
+
+  car.addEventListener("animationend", (event)=>{
+    if(event.animationName === 'boostCar')
+      car.classList.remove('boostCar', 'carBodyRightToCenter', 'carBodyLeftToCenter');
+  });
+
 });
+
+
+
