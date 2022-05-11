@@ -13,6 +13,7 @@
   --scenePerspective: 15em;
   --scenePerspectiveOrigin: 45%;
   --carZShift: 12em;
+  --carBoostZShift: -30em;
   --carRotateSpeed: 0.2s;
   --carRotateDegrees: 7deg;
   --carRotateZShift: 2em; 
@@ -325,16 +326,6 @@ background-color:#fff;
 }
 
 
-      /***********************   CAR BOOST ANIMATIONS   ***********************/
-
-    /************ CAR BOOST CLASSES ************/
-
-
-
-    /************ CAR BOOST KEYFRAMES ************/
-
-
-
 
 
 
@@ -527,6 +518,35 @@ background-color:#fff;
   to {transform:  translate3D(18em, 0em, 26em) rotateZ(90deg) rotateY(-360deg)  }
 }
 
+      /***********************   CAR BOOST ANIMATIONS   ***********************/
+
+    /************ CAR BOOST CLASSES ************/
+.boostCar  {
+  animation-name: boostCar;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier();
+}
+.boostCarGlow {
+  animation-name: boostCarGlow;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier();
+}
+
+    /************ CAR BOOST KEYFRAMES ************/
+@keyframes boostCar {
+  0% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  33% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  34% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  100% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+}
+
+@keyframes boostCarGlow {
+  0% {box-shadow: 0 0 1em #FFF0;}
+  33% {box-shadow: 0 0 10em #FFFF;}
+  34% {box-shadow: 0 0 10em #FFFF;}
+  100% {box-shadow: 0 0 1em #FFF0;}
+}
+
 
 
     /*************************!     PALM TREE     !*************************/
@@ -606,17 +626,7 @@ background-color:#fff;
 .face {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.9);
 }
-/* .scene, .shape, .face, .face-wrapper, .cr {
-  position: absolute;
-  transform-style: preserve-3d;
-}
-.scene {
-  width: 80em;
-  height: 80em;
-  top: 50%;
-  left: 50%;
-  margin: -40em 0 0 -40em;
-} */
+
 .shape {
   top: 50%;
   left: 50%;
@@ -1607,55 +1617,7 @@ background-color:#fff;
 
 
 /*********** PALM TREE STUFF **************/
-/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ 
-/* .face {
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
-}
-.scene, .shape, .face, .face-wrapper, .cr {
-  position: absolute;
-  transform-style: preserve-3d;
-}
-.scene {
-  width: 80em;
-  height: 80em;
-  top: 50%;
-  left: 50%;
-  margin: -40em 0 0 -40em;
-}
-.shape {
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform-origin: 50%;
-}
-.face, .face-wrapper {
-  overflow: hidden;
-  transform-origin: 0 0;
-  backface-visibility: hidden;
-}
-.face {
-  background-size: 100% 100%!important;
-  background-position: center;
-}
-.face-wrapper .face {
-  left: 100%;
-  width: 100%;
-  height: 100%
-}
-.photon-shader {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%
-}
-.side {
-  left: 50%;
-}
-.cr, .cr .side {
-  height: 100%;
-} */
+
 [class*="cylinder"] .tp {
   transform: rotateX(90deg) translateY(-50%);
 }
