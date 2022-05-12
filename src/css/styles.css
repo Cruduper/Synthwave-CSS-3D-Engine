@@ -61,7 +61,7 @@ body  {
 #playerleftRSlid {  right: 10%; }
 #distSlid { left: 20% }
 
-.scene, #ground, #car, #palmTree, #sunset, #tireFrontLeft, #tireFrontRight {
+.scene, #ground, #car, #palmTree, #sunset, #tireFrontLeft, #tireFrontRight, #carContainer {
   position: relative;
   transform-style: preserve-3d;
 }
