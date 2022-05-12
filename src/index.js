@@ -119,8 +119,8 @@ function logKey(key) {
         break;
         case 'ArrowUp':
         if (key.type === 'keydown'){
-          document.getElementById('cyberCraft').classList.add('boostCar');
-          document.getElementById('viewport').classList.add('boostScenePerspective');
+          car.classList.add('boostCar');
+          viewport.classList.add('boostScenePerspective');
           // document.getElementById('cyberCraft').classList.add('boostCarGlow');
           document.querySelectorAll('#cyberCraft .face').forEach( face => {
             face.classList.add('boostCarGlow');
@@ -205,6 +205,11 @@ $(document).ready(function() {
   car.addEventListener("animationend", (event)=>{
     if(event.animationName === 'boostCar')
       car.classList.remove('boostCar', 'carBodyRightToCenter', 'carBodyLeftToCenter');
+  });
+
+   viewport.addEventListener("animationend", (event)=>{
+    if(event.animationName === 'boostScenePerspective')
+      viewport.classList.remove('boostScenePerspective');
   });
 
   car.querySelector('.face').addEventListener("animationend", (event)=>{
