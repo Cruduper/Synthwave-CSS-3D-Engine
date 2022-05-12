@@ -7,6 +7,7 @@ import './css/styles.css';
 
 const root = document.documentElement;
 const car = document.getElementById("car");
+const carContainer = document.getElementById("carContainer");
 const viewport = document.getElementById('viewport');
 let pressedKeys = {};
 let done = false;
@@ -119,7 +120,7 @@ function logKey(key) {
         break;
         case 'ArrowUp':
         if (key.type === 'keydown'){
-          car.classList.add('boostCar');
+          carContainer.classList.add('boostCar');
           viewport.classList.add('boostScenePerspective');
           // document.getElementById('car').classList.add('boostCarGlow');
           document.querySelectorAll('#car .face').forEach( face => {
@@ -202,18 +203,12 @@ $(document).ready(function() {
   });
 
 
-  car.addEventListener("animationend", (event)=>{
-    if(event.animationName === 'boostCar')
-      car.classList.remove('boostCar', 'carBodyRightToCenter', 'carBodyLeftToCenter');
-  });
+  carContainer.addEventListener("animationend", (event)=>{
+    if(event.animationName === 'boostCar'){
+      car.classList.remove('carBodyRightToCenter', 'carBodyLeftToCenter');
+      carContainer.classList.remove('boostCar');
 
-   viewport.addEventListener("animationend", (event)=>{
-    if(event.animationName === 'boostScenePerspective')
       viewport.classList.remove('boostScenePerspective');
-  });
-
-  car.querySelector('.face').addEventListener("animationend", (event)=>{
-    if(event.animationName === 'boostCarGlow'){
       car.querySelectorAll('#car .face').forEach( face => {
         face.classList.remove('boostCarGlow');
       });
