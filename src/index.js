@@ -6,7 +6,7 @@ import './css/styles.css';
 
 
 const root = document.documentElement;
-const car = document.getElementById("cyberCraft");
+const car = document.getElementById("car");
 const viewport = document.getElementById('viewport');
 let pressedKeys = {};
 let done = false;
@@ -65,7 +65,7 @@ function logKey(key) {
             exGlowVis.style.display = "block";
           }
 
-          document.querySelectorAll('#cyberCraft .face').forEach( face => {
+          document.querySelectorAll('#car .face').forEach( face => {
             face.classList.toggle('playerColor');
           });
           document.querySelectorAll("#palmTree [class*='prism']").forEach(face => {
@@ -81,16 +81,16 @@ function logKey(key) {
       
       case 'ArrowLeft':
         if (key.type === "keydown"){
-          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('cyberCraft').classList.add('carBodyTurnLeft')
+          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          document.getElementById('car').classList.add('carBodyTurnLeft')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnLeft');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnLeft');
         }
         else if (key.type === "keyup"){
-          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('cyberCraft').classList.add('carBodyLeftToCenter')
+          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          document.getElementById('car').classList.add('carBodyLeftToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireLeftToCenter');
@@ -100,16 +100,16 @@ function logKey(key) {
         break;
       case 'ArrowRight':
         if (key.type === "keydown"){
-          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('cyberCraft').classList.add('carBodyTurnRight')
+          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          document.getElementById('car').classList.add('carBodyTurnRight')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnRight');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnRight');
         }
         else if (key.type === "keyup"){
-          document.getElementById('cyberCraft').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('cyberCraft').classList.add('carBodyRightToCenter')
+          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          document.getElementById('car').classList.add('carBodyRightToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireRightToCenter');
@@ -121,8 +121,8 @@ function logKey(key) {
         if (key.type === 'keydown'){
           car.classList.add('boostCar');
           viewport.classList.add('boostScenePerspective');
-          // document.getElementById('cyberCraft').classList.add('boostCarGlow');
-          document.querySelectorAll('#cyberCraft .face').forEach( face => {
+          // document.getElementById('car').classList.add('boostCarGlow');
+          document.querySelectorAll('#car .face').forEach( face => {
             face.classList.add('boostCarGlow');
           });
         }
@@ -214,7 +214,7 @@ $(document).ready(function() {
 
   car.querySelector('.face').addEventListener("animationend", (event)=>{
     if(event.animationName === 'boostCarGlow'){
-      car.querySelectorAll('#cyberCraft .face').forEach( face => {
+      car.querySelectorAll('#car .face').forEach( face => {
         face.classList.remove('boostCarGlow');
       });
     }

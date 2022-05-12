@@ -61,7 +61,7 @@ body  {
 #playerleftRSlid {  right: 10%; }
 #distSlid { left: 20% }
 
-.scene, #ground, #cyberCraft, #palmTree, #sunset, #tireFrontLeft, #tireFrontRight {
+.scene, #ground, #car, #palmTree, #sunset, #tireFrontLeft, #tireFrontRight {
   position: relative;
   transform-style: preserve-3d;
 }
@@ -82,7 +82,7 @@ body  {
   transform: translateY( var(--sceneHeight) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ)) ;
 }
 
-#cyberCraft {
+#car {
   transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
   font-size: .5em;
 }
@@ -94,11 +94,11 @@ body  {
 
 
     /***********    NON-FLOOR GLOW COLORS  *************/
-#cyberCraft .face {
+#car .face {
   border: 2px solid #FCCF;
 }
 
-#cyberCraft .playerColor {
+#car .playerColor {
   /* border-collapse: collapse; */
   box-shadow: 0 0 30px #F33C;
 }
@@ -546,28 +546,25 @@ background-color:#fff;
 
     /************ CAR BOOST KEYFRAMES ************/
 @keyframes boostCar {
-  0% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  0% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))} 
   15% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
-  34% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  35% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
   100% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
 }
 
 
 @keyframes boostCarGlow {
   0% {box-shadow: 0 0 2em #F33C}
-  34% {box-shadow: 0 0 5em var(--boostColor)}
   35% {box-shadow: 0 0 5em var(--boostColor)}
   100% {box-shadow: 0 0 2em #F33C}
 }
 
-@keyframes boostScenePerspective{
+@keyframes boostScenePerspective {
   0% {perspective: calc(var(--scenePerspective))}
   35% {perspective: calc(var(--scenePerspective) + var(--scenePerspectiveBoostAdjust))}
   45% {perspective: calc(var(--scenePerspective) + var(--scenePerspectiveBoostAdjust))}
   100% {perspective: calc(var(--scenePerspective))}
 }
-
-
 
 
 
