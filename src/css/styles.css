@@ -17,12 +17,14 @@
   --carRotateSpeed: 0.2s;
   --carRotateDegrees: 7deg;
   --carRotateZShift: 2em; 
-  --boostColor: #FF69B4;
+  --boostColor: #FF69AA;
 }
 
 body  {
   background-color: #000F;
 }
+
+
 
 #viewport {
   margin: auto;
@@ -134,7 +136,7 @@ table {
 .horLine  {
   margin: 10px;
   padding: 10px;
-  box-shadow: 0 0 .75em #8F8A;
+  /* box-shadow: 0 0 .75em #8F8A; */
 }
 
 th {
@@ -148,7 +150,7 @@ th {
 }
 
 .vertLine {
-  box-shadow: 0 0 1em #8F8F;
+  box-shadow: 0 0 1em #9F8F;
 }
 
 .vertLineExtraGlow {
@@ -158,8 +160,9 @@ th {
 .lastElementBorder  {
   border-right: 3px solid #0D0C;
 }
-
-
+/* .floor{
+  display: none;
+} */
 
           /************ GROUND ANIMATION CLASSES *******************/
 #floorExtraGlow {
@@ -543,9 +546,9 @@ background-color:#fff;
 
 
 @keyframes boostCarGlow {
-  0% {box-shadow: 0 0 2em #F33C;}
-  25% {box-shadow: 0 0 3em var(--boostColor);}
-  34% {box-shadow: 0 0 3em var(--boostColor);}
+  0% {box-shadow: 0 0 2em #F33C; perspective: 15em}
+  25% {box-shadow: 0 0 6em var(--boostColor); perspective: 3em}
+  34% {box-shadow: 0 0 6em var(--boostColor);}
   100% {box-shadow: 0 0 2em #F33C;}
 }
 
