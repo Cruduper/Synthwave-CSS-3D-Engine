@@ -16,9 +16,9 @@
   --carRotateDegrees: 7deg;
   --carRotateZShift: 2em; 
   --carZShift: 12em;
-  --carBoostZShift: -30em;
+  --carBoostZShift: -20em;
   --boostColor: #FF69AA;
-  --boostDuration: 2s;
+  --boostDuration: 3s;
 }
 
 body  {
@@ -546,7 +546,7 @@ background-color:#fff;
     /************ CAR BOOST KEYFRAMES ************/
 @keyframes boostCar {
   0% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
-  33% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  10% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
   34% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
   100% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
 }
@@ -554,15 +554,15 @@ background-color:#fff;
 
 @keyframes boostCarGlow {
   0% {box-shadow: 0 0 2em #F33C; perspective: 15em}
-  25% {box-shadow: 0 0 6em var(--boostColor); perspective: 3em}
-  34% {box-shadow: 0 0 6em var(--boostColor);}
+  34% {box-shadow: 0 0 6em var(--boostColor); perspective: 3em}
+  35% {box-shadow: 0 0 6em var(--boostColor);}
   100% {box-shadow: 0 0 2em #F33C;}
 }
 
 @keyframes boostScenePerspective{
   0% {perspective: calc(var(--scenePerspective))}
-  33% {perspective: calc(var(--scenePerspective) - 3em)}
-  34% {perspective: calc(var(--scenePerspective) - 3em)}
+  35% {perspective: calc(var(--scenePerspective) - 6em)}
+  45% {perspective: calc(var(--scenePerspective) - 6em)}
   100% {perspective: calc(var(--scenePerspective))}
 }
 
