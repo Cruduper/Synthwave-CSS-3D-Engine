@@ -7,6 +7,7 @@ import './css/styles.css';
 
 const root = document.documentElement;
 const car = document.getElementById("cyberCraft");
+const viewport = document.getElementById('viewport');
 let pressedKeys = {};
 let done = false;
 let keyPress;
@@ -119,6 +120,7 @@ function logKey(key) {
         case 'ArrowUp':
         if (key.type === 'keydown'){
           document.getElementById('cyberCraft').classList.add('boostCar');
+          document.getElementById('viewport').classList.add('boostScenePerspective');
           // document.getElementById('cyberCraft').classList.add('boostCarGlow');
           document.querySelectorAll('#cyberCraft .face').forEach( face => {
             face.classList.add('boostCarGlow');
