@@ -6,3 +6,4 @@ coverage/
 .env
 brainstorm.txt
 scratchpaper.txt
+*.psd
