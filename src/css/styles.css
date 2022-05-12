@@ -546,10 +546,10 @@ background-color:#fff;
 
     /************ CAR BOOST KEYFRAMES ************/
 @keyframes boostCar {
-  0% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))} 
-  15% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
-  35% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
-  100% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  0% {transform: translateZ(0deg)} 
+  15% {transform: translateZ(var(--carBoostZShift)) }
+  35% {transform: translateZ(var(--carBoostZShift)) }
+  100% {transform: translateZ(0deg)}
 }
 
 
