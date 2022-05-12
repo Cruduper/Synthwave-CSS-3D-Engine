@@ -19,6 +19,7 @@
   --carBoostZShift: -20em;
   --boostColor: #FF69AA;
   --boostDuration: 3s;
+  --scenePerspectiveBoostAdjust: -3em;
 }
 
 body  {
@@ -327,7 +328,7 @@ background-color:#fff;
 }
     /***************! [enable for pure wireframe mode ] !****************/
 [class*="cyl"] .face, [class*="cub"] .face, [class*="pri"] .face{
-  background-color: #F455;
+  background-color: #F456;
 }
 
 
@@ -546,23 +547,23 @@ background-color:#fff;
     /************ CAR BOOST KEYFRAMES ************/
 @keyframes boostCar {
   0% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
-  10% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
+  15% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
   34% {transform: translateZ(calc(var(--carZShift) + var(--carBoostZShift))) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
   100% {transform: translateZ(var(--carZShift)) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)))}
 }
 
 
 @keyframes boostCarGlow {
-  0% {box-shadow: 0 0 2em #F33C; perspective: 15em}
-  34% {box-shadow: 0 0 6em var(--boostColor); perspective: 3em}
-  35% {box-shadow: 0 0 6em var(--boostColor);}
-  100% {box-shadow: 0 0 2em #F33C;}
+  0% {box-shadow: 0 0 2em #F33C}
+  34% {box-shadow: 0 0 5em var(--boostColor)}
+  35% {box-shadow: 0 0 5em var(--boostColor)}
+  100% {box-shadow: 0 0 2em #F33C}
 }
 
 @keyframes boostScenePerspective{
   0% {perspective: calc(var(--scenePerspective))}
-  35% {perspective: calc(var(--scenePerspective) - 6em)}
-  45% {perspective: calc(var(--scenePerspective) - 6em)}
+  35% {perspective: calc(var(--scenePerspective) + var(--scenePerspectiveBoostAdjust))}
+  45% {perspective: calc(var(--scenePerspective) + var(--scenePerspectiveBoostAdjust))}
   100% {perspective: calc(var(--scenePerspective))}
 }
 
