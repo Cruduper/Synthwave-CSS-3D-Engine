@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
 
-
 const root = document.documentElement;
 const car = document.getElementById("car");
 const carContainer = document.getElementById("carContainer");
@@ -88,16 +87,16 @@ function logKey(key) {
       
       case 'ArrowLeft':
         if (key.type === "keydown"){
-          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('car').classList.add('carBodyTurnLeft')
+          car.classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          car.classList.add('carBodyTurnLeft')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnLeft');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnLeft');
         }
         else if (key.type === "keyup"){
-          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('car').classList.add('carBodyLeftToCenter')
+          car.classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          car.classList.add('carBodyLeftToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireLeftToCenter');
@@ -107,15 +106,15 @@ function logKey(key) {
         break;
       case 'ArrowRight':
         if (key.type === "keydown"){
-          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
-          document.getElementById('car').classList.add('carBodyTurnRight')
+          car.classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          car.classList.add('carBodyTurnRight')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
           document.getElementById('tireFrontLeft').classList.add('leftTireTurnRight');
           document.getElementById('tireFrontRight').classList.add('rightTireTurnRight');
         }
         else if (key.type === "keyup"){
-          document.getElementById('car').classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
+          car.classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
           document.getElementById('car').classList.add('carBodyRightToCenter')
           document.getElementById('tireFrontLeft').className = "";
           document.getElementById('tireFrontRight').className = "";
