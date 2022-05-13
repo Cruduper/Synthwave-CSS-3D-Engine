@@ -1,8 +1,11 @@
 :root {
-  --tireRotationRate: 1s;
+  --tireRotationRate: 1.25s;
+  --tireRotationRateBoost: .75s;
   --tireTurnDegrees: 20deg;
-  --floorRate: 5s;
+  --floorRate: 6s;
+  --floorBoostRate: 4s;
   --extraGlowRate: 2s;
+  --extraGlowBoostRate: 1s;
   --playerLeftRight: 0em;
   --sceneLeftRight: 0;
   --sceneDistance: -21em;
@@ -16,10 +19,10 @@
   --carRotateDegrees: 7deg;
   --carRotateZShift: 2em; 
   --carZShift: 12em;
-  --carBoostZShift: -20em;
-  --boostColor: #FF69AA;
+  --carBoostZShift: -10em;
+  --boostColor:  #FFFC;/*#FF69AA; */
   --boostDuration: 3s;
-  --scenePerspectiveBoostAdjust: -3em;
+  --scenePerspectiveBoostAdjust: -4.5em;
 }
 
 body  {
