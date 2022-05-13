@@ -128,6 +128,9 @@ function logKey(key) {
         if (key.type === 'keydown'){
           carContainer.classList.add('boostCar');
           viewport.classList.add('boostScenePerspective');
+          root.style.setProperty("--floorRate", floorBoostRate);
+          root.style.setProperty("--extraGlowRate", extraGlowBoostRate );
+          root.style.setProperty("--tireRotationRate", tireRotationRateBoost);
           
           document.querySelectorAll('.tire .face').forEach( face => {
             face.classList.add('boostCarGlow');
@@ -215,10 +218,13 @@ $(document).ready(function() {
       carContainer.classList.remove('boostCar');
 
       viewport.classList.remove('boostScenePerspective');
-      car.querySelectorAll('#tire .face').forEach( face => {
+      car.querySelectorAll('.tire .face').forEach( face => {
         face.classList.remove('boostCarGlow');
       });
 
+      root.style.setProperty("--floorRate", floorRate);
+      root.style.setProperty("--extraGlowRate", extraGlowRate);
+      root.style.setProperty("--tireRotationRate", tireRotationRate);
     }
   });
 })
