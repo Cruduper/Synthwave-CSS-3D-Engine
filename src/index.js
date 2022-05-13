@@ -9,6 +9,12 @@ const root = document.documentElement;
 const car = document.getElementById("car");
 const carContainer = document.getElementById("carContainer");
 const viewport = document.getElementById('viewport');
+const floorRate = getComputedStyle(root).getPropertyValue('--floorRate');
+const floorBoostRate = getComputedStyle(root).getPropertyValue('--floorBoostRate');
+const extraGlowRate = getComputedStyle(root).getPropertyValue('--extraGlowRate');
+const extraGlowBoostRate = getComputedStyle(root).getPropertyValue('--extraGlowBoostRate');
+const tireRotationRate = getComputedStyle(root).getPropertyValue('--tireRotationRate');
+const tireRotationRateBoost = getComputedStyle(root).getPropertyValue('--tireRotationRateBoost');
 let pressedKeys = {};
 let done = false;
 let keyPress;
@@ -209,7 +215,7 @@ $(document).ready(function() {
       carContainer.classList.remove('boostCar');
 
       viewport.classList.remove('boostScenePerspective');
-      car.querySelectorAll('.tire .face').forEach( face => {
+      car.querySelectorAll('#tire .face').forEach( face => {
         face.classList.remove('boostCarGlow');
       });
 
