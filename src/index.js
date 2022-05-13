@@ -122,8 +122,8 @@ function logKey(key) {
         if (key.type === 'keydown'){
           carContainer.classList.add('boostCar');
           viewport.classList.add('boostScenePerspective');
-          // document.getElementById('car').classList.add('boostCarGlow');
-          document.querySelectorAll('#car .face').forEach( face => {
+          
+          document.querySelectorAll('.tire .face').forEach( face => {
             face.classList.add('boostCarGlow');
           });
         }
@@ -209,9 +209,10 @@ $(document).ready(function() {
       carContainer.classList.remove('boostCar');
 
       viewport.classList.remove('boostScenePerspective');
-      car.querySelectorAll('#car .face').forEach( face => {
+      car.querySelectorAll('.tire .face').forEach( face => {
         face.classList.remove('boostCarGlow');
       });
+
     }
   });
 })
