@@ -23,6 +23,7 @@
   --boostColor:  #FFFC;/*#FF69AA; */
   --boostDuration: 3s;
   --scenePerspectiveBoostAdjust: -4.5em;
+
 }
 
 body  {
@@ -42,6 +43,19 @@ body  {
   perspective: var(--scenePerspective);
   perspective-origin: 50% var(--scenePerspectiveOrigin);
 }
+
+#introScreen  {
+  display: none;
+  background-color: black;
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+
 
 .form-group {
   position: fixed;
