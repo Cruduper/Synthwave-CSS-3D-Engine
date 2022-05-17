@@ -23,6 +23,8 @@
   --boostColor:  #FFFC;/*#FF69AA; */
   --boostDuration: 3s;
   --scenePerspectiveBoostAdjust: -4.5em;
+  --viewPortWidth: 1600px;
+  --viewPortHeight: 900px;
 
 }
 
@@ -35,8 +37,8 @@ body  {
 #viewport {
   margin: auto;
   background-color: #0005;
-  width: 1600px;
-  height: 900px;
+  width: var(--viewPortWidth);
+  height: var(--viewPortHeight);
   display: flex;
   overflow:hidden;
   font-size: 2.5em;
