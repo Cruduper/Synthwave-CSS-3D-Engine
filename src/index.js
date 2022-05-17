@@ -33,7 +33,7 @@ window.onkeydown = function(e) {
 function logKey(key) {
 
     keyPress = key;
-    
+
     switch(key.code) {
       case 'KeyC':
         if (key.type === 'keydown'){
@@ -193,8 +193,7 @@ function setCameraAngle(camDist, height, rotX, rotY, rotZ, perspect, perspectOri
 
 
 
-$(document).ready(function() {
-  const root = document.documentElement;
+function addCameraSliders(){
 
   const slider = document.getElementById("angleSlider");
   slider.addEventListener("input", (e) => {
@@ -212,7 +211,14 @@ $(document).ready(function() {
   slider4.addEventListener("input", (e) => {
     root.style.setProperty("--sceneDistance", e.target.value + "em");
   });
+}
 
+$(document).ready(function() {
+  const root = document.documentElement;
+  
+
+  
+  addCameraSliders();
 
   carContainer.addEventListener("animationend", (event)=>{
     if(event.animationName === 'boostCar'){
