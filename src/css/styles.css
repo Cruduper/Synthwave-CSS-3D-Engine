@@ -39,7 +39,7 @@ body  {
   background-color: #0005;
   width: var(--viewPortWidth);
   height: var(--viewPortHeight);
-  display: flex;
+  display: none;
   overflow:hidden;
   font-size: 2.5em;
   perspective: var(--scenePerspective);
@@ -47,14 +47,20 @@ body  {
 }
 
 #introScreen  {
-  display: none;
+  /* display: none; */
+  display: fixed;
+  margin: auto;
   background-color: black;
-  position:fixed;
-  width: 100%;
-  height: 100%;
+  width: var(--viewPortWidth);
+  height: var(--viewPortHeight);
   color: white;
   text-align: center;
   z-index: 5;
+}
+
+#introText  {
+  margin-top: calc( var(--viewPortHeight) / 2);
+  font-size: 3em;
 }
 
 
