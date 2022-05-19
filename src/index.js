@@ -8,12 +8,15 @@ import img from './img/sunset.png';
 const root = document.documentElement;
 const car = document.getElementById('car');
 const carContainer = document.getElementById('carContainer');
+const sunset = document.getElementById('sunset');
+const palmTree = document.getElementById('palmTree');
 const viewport = document.getElementById('viewport');
 const scene = document.getElementById('scene')
 const introScreen = document.getElementById('introScreen');
 const floors = document.querySelectorAll('.floor');
 const floorRate = getComputedStyle(root).getPropertyValue('--floorRate');
 const floorBoostRate = getComputedStyle(root).getPropertyValue('--floorBoostRate');
+const floorExtraGlow = document.getElementById('floorExtraGlow');
 const extraGlowRate = getComputedStyle(root).getPropertyValue('--extraGlowRate');
 const extraGlowBoostRate = getComputedStyle(root).getPropertyValue('--extraGlowBoostRate');
 const tireRotationRate = getComputedStyle(root).getPropertyValue('--tireRotationRate');
@@ -167,6 +170,12 @@ function logKey(key) {
       viewport.style.setProperty("display", "flex");
       car.classList.add('introAnimationCar');
       scene.classList.add('introAnimationCamera');
+      floors.forEach( function (elem) {
+            elem.style.display = 'none';
+      });
+      floorExtraGlow.style.display = 'none';
+      sunset.style.display = 'none';
+      palmTree.style.display = 'none';
       introEnterPressed = true;
       playSong();
     }
@@ -271,7 +280,12 @@ $(document).ready(function() {
   car.addEventListener("animationend", (event)=>{
     if(event.animationName === 'introAnimationCar'){
       car.classList.remove('introAnimationCar');
-      keysAllowed = true;
+      floors.forEach( function (elem) {
+            elem.style.display = 'block';
+      });
+      floorExtraGlow.style.display = 'block';
+      sunset.style.display = 'block';
+      palmTree.style.display = 'block';
     }
   });
 })
