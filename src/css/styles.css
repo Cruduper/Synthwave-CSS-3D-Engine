@@ -7,7 +7,7 @@
   --extraGlowRate: 2s;
   --extraGlowBoostRate: 1s;
   --playerLeftRight: 0em;
-  --sceneLeftRight: 0;
+  --sceneLeftRight: 0em;
   --sceneDistance: -21em;
   --sceneHeight: -10em;
   --sceneRotateX: 1deg;
@@ -361,7 +361,7 @@ background-color:#fff;
       /*************    INTRO ANIMATIONS   **************/
 .introAnimationCar {
   animation-name: introAnimationCar;
-  animation-duration: 14.2s;
+  animation-duration: 14.25s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -376,15 +376,56 @@ animation-name: introAnimationCamera;
 
           /************* INTRO ANIMATIONS KEYFRAMES ***************/
 @keyframes introAnimationCar { 
-  0% {transform: translateZ( var(--carZShift) ) translateY(-11.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
-  75% {transform: translateZ( var(--carZShift) ) translateY(-11.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
+  0% {transform: translateZ( var(--carZShift) ) translateY(-41.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
+  75% {transform: translateZ( var(--carZShift) ) translateY(-41.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
   100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
 }
 
 @keyframes introAnimationCamera { 
-  0% {transform: translateY( calc(var(--sceneHeight) + 10em) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ))}
-  75% {transform: translateY( calc(var(--sceneHeight) + 10em) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ))}
-  100% {transform: translateY( var(--sceneHeight) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ))}
+  0%    {transform: 
+          rotateX(270deg)
+          rotateY( var(--sceneRotateY) ) 
+          rotateX( var(--sceneRotateX) ) 
+          rotateZ( var(--sceneRotateZ) )
+          translateY( calc(var(--sceneHeight) + 37em) ) 
+          translateX( calc(var(--sceneLeftRight) + 0em) ) 
+          translateZ( calc(var(--sceneDistance) + 25em) ) 
+        }
+  15%   {transform: 
+          rotateY( 90deg)
+          rotateY( var(--sceneRotateY) ) 
+          rotateX( var(--sceneRotateX) ) 
+          rotateZ( var(--sceneRotateZ) )
+          translateY( calc(var(--sceneHeight) + 39em) ) 
+          translateX( calc(var(--sceneLeftRight) + 7em) ) 
+          translateZ( calc(var(--sceneDistance) + 35em) ) 
+        }
+  30%   {transform: 
+          rotateY( 180deg)
+          rotateY( var(--sceneRotateY) ) 
+          rotateX( var(--sceneRotateX) ) 
+          rotateZ( var(--sceneRotateZ) )
+          translateY( calc(var(--sceneHeight) + 43em) ) 
+          translateX( calc(var(--sceneLeftRight) - 40em) ) 
+          translateZ( calc(var(--sceneDistance) + 11em) ) 
+        }
+  99.999%   {transform: 
+          rotateY( 180deg)
+          rotateY( var(--sceneRotateY) ) 
+          rotateX( var(--sceneRotateX) ) 
+          rotateZ( var(--sceneRotateZ) )
+          translateY( calc(var(--sceneHeight) + 43em) ) 
+          translateX( calc(var(--sceneLeftRight) - 40em) ) 
+          translateZ( calc(var(--sceneDistance) + 11em) ) 
+        }
+  100%  {transform: 
+          translateY( var(--sceneHeight) ) 
+          translateX( var(--sceneLeftRight) ) 
+          translateZ( var(--sceneDistance) ) 
+          rotateY( var(--sceneRotateY) ) 
+          rotateX( var(--sceneRotateX) ) 
+          rotateZ( var(--sceneRotateZ) )
+        }
 }
 
 
@@ -549,6 +590,7 @@ animation-name: introAnimationCamera;
 /*   display: none; */
   animation-name: tireSpinFrontLeft;
   animation-duration: var(--tireRotationRate);
+  animation-delay: 7.4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -556,6 +598,7 @@ animation-name: introAnimationCamera;
 /*   display: none; */
   animation-name: tireSpinBackLeft;
   animation-duration: var(--tireRotationRate);
+  animation-delay: 7.4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -563,6 +606,7 @@ animation-name: introAnimationCamera;
 /*   display: none; */
   animation-name: tireSpinFrontRight;
   animation-duration: var(--tireRotationRate);
+  animation-delay: 7.4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -570,6 +614,7 @@ animation-name: introAnimationCamera;
 /*   display: none; */
   animation-name: tireSpinBackRight;
   animation-duration: var(--tireRotationRate);
+  animation-delay: 7.4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -963,7 +1008,7 @@ animation-name: introAnimationCamera;
   width:2em;
   height:4em;
   margin:-2em 0 0 -1em;
-}
+} 
 .cyl-11 .tp, .cyl-11 .bm {
   width:2em;
   height:2em;
@@ -1076,7 +1121,7 @@ animation-name: introAnimationCamera;
 
 /* .cyl-3 styles */
 .cyl-3 {
-  /* transform:translate3D(18em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg); */
+  transform:translate3D(18em, 0.5em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
   opacity:1;
   width:6em;
   height:5em;
