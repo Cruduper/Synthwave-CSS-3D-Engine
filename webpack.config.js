@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '',
+      title: 'Synthwave CSS 3D Engine',
       template: './src/index.html',
       inject: 'body'
     }),
