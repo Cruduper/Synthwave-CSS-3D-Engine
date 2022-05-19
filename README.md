@@ -3,13 +3,27 @@
 ### 🤝 Contributors 
 _**{Eric Crudup}**_
 
-![image](.src/img/sunset.png)
-
-#### _{Brief description of application} [GH-Pages site link](https://cruduper.github.io/!!!!!insert_site_here!!!!)_
-
+![image](./src/img/sunset.png)
+<img src="./src/img/sunset.png" alt="Getting started" />
 
 ---
 ## 🌐 About the Project
+
+### 📖 Description
+ _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [GH-Pages link will go here at some point in the future](https://cruduper.github.io/!!!!!insert_site_here!!!!)_
+
+#### _**!IMPORTANT!** In order to run this you will likely need to have a modern 3rd party GPU installed on your machine. It is unlikely to run at anything nearing a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In the other browsers I tested, the app ran anywhere from slow to unusably slow. I created an "Eco" mode that uses slightly fewer resources (see Controls). I plan on optimizing performance both generally and for specific browsers, but that will come at a later date._       
+
+###   
+### 🎮 Controls
+```
+Turn Left: left Arrow key
+Turn Right: Right Arrow key
+Boost: Up Arrow key
+Camera Angle Change: 'C' key
+"Eco" Mode toggle: 'E' key
+```
+
 
 ### 🛠 Technologies Used
 
@@ -17,15 +31,14 @@ _**{Eric Crudup}**_
 * _HTML_
 * _CSS_
 * _npm_
+* _tridiv.com_
 * _eslint_
-
-### 📖 Description
-
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
 
 ### 🦠 Known Bugs OR Issues
 
-- No known bugs 
+1. Palm trees change position during boost (generalized, animations change/reset if animation speed or other variables change). This may be due to CSS doing the calculations for any transition from one value to another only once (at very start of the animation). If this is the case, fixing it might be impossible with CSS, but the problem could be alleviated using a javascript library to do my animations, such as Greensock (https://greensock.com/gsap/) or Velocity (http://velocityjs.org/). But that is beyond the scope of the project. I will need to investigate this bug more fully to see if anything can be done.
+
+2. Red glowyness still suddenly appears on car during "Eco" mode during "boost" animation, making it look like the car changes color slightly. This needs to be fixed, but I still might want white glow to happen on tires during "Eco" mode. 
 
 ## 🏁 Getting Started
 
@@ -37,6 +50,7 @@ _{This is a detailed description of your application. Give as much detail as nee
 * _use the '$ npm install' command to install necessary packages_
 * _type in '$ npm run build' to build project_
 * _type in '$ npm run start' command to open project in browser and start live server_
+* _have a great time all the time_
 
 ## ⚖️ License
 
