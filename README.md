@@ -1,7 +1,7 @@
 # _Synthwave CSS 3D Engine Demo_
 
 ### 🤝 Contributors 
-_**{Eric Crudup}**_
+_**all source code and original music by Eric Crudup**_
 
 ![image of 3D demo](src/img/SynthwaveCSS1small.png)
 
@@ -9,11 +9,11 @@ _**{Eric Crudup}**_
 ## 🌐 About the Project
 
 ### 📖 Description
- _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [GH-Pages link will go here at some point in the future](https://cruduper.github.io/!!!!!insert_site_here!!!!)_
+ _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [Live GH-Pages link will go here at some point in the near future](https://cruduper.github.io/!!!!!insert_site_here!!!!)_
 
-#### _**!IMPORTANT!** In order to run this you will likely need to have a modern 3rd party GPU installed on your machine. It is unlikely to run at anything nearing a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In the other browsers I tested, the app ran anywhere from slow to unusably slow. I created an "Eco" mode that uses slightly fewer resources (see Controls). I plan on optimizing performance both generally and for specific browsers, but that will come at a later date._       
+#### _**!IMPORTANT!** In order to run this you will likely need to have a modern 3rd party GPU installed on your machine. It is unlikely to run at anything nearing a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow. I created an "Eco" mode that uses slightly fewer resources (see Controls). I plan on optimizing performance both generally and for specific browsers, but that will come at a later date._       
 
-###   
+   
 ### 🎮 Controls
 ```
 Turn Left: left Arrow key
@@ -56,12 +56,10 @@ Camera Angle Change: 'C' key
 
 ## ⚖️ License
 
-[MIT](https://opensource.org/licenses/MIT)    
-If you have any issues or questions, contact me at briefcasemanx@gmail.com   
+For the non-music code: [MIT](https://opensource.org/licenses/MIT)    
 
 ```
 MIT License
-Copyright (c) 2021 Eric Crudup.
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -78,7 +76,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
+If you have any issues or questions, or would like to permission to use the original music contained in this project, contact me at briefcasemanx@gmail.com.    
 Copyright (c) _2022_  _Eric Crudup_
 
 <center><a href="#">Return to Top</a></center>
