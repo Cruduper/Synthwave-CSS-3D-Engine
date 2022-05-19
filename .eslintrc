@@ -13,6 +13,7 @@
   "rules": {
       "semi": 1,
       "indent": ["warn", 2],
-      "no-debugger": "warn"
+      "no-debugger": "warn",
+      "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
   }
 }
