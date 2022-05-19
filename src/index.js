@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import mp3File from './audio/song1.mp3'
+import mp3File from './audio/synthwaveCSSDemoSong.mp3';
 import img from './img/sunset.png';
 
 const root = document.documentElement;
