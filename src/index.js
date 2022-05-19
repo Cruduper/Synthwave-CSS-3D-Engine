@@ -6,9 +6,10 @@ import mp3File from './audio/synthwaveCSSDemoSong.mp3';
 import img from './img/sunset.png';
 
 const root = document.documentElement;
-const car = document.getElementById("car");
-const carContainer = document.getElementById("carContainer");
+const car = document.getElementById('car');
+const carContainer = document.getElementById('carContainer');
 const viewport = document.getElementById('viewport');
+const scene = document.getElementById('scene')
 const introScreen = document.getElementById('introScreen');
 const floorRate = getComputedStyle(root).getPropertyValue('--floorRate');
 const floorBoostRate = getComputedStyle(root).getPropertyValue('--floorBoostRate');
@@ -34,7 +35,7 @@ window.onkeydown = function(e) {
 
 function playSong() {
   const music = new Audio(mp3File);
-  music.loop =true;
+  music.loop =false;
   music.playbackRate = 1;
   music.volume = 0.6;
   music.play();
@@ -96,7 +97,7 @@ function logKey(key) {
           face.classList.toggle("trunkColor");
         });
       }
-      console.log("eco mode changed");
+      //console.log("eco mode changed");
       // console.log(key);
       break;
     
@@ -152,12 +153,15 @@ function logKey(key) {
       }
       break;
     case 'Enter':
+      console.log(key.code, introEnterPressed)
       if (introEnterPressed === false){
+        console.log(key.code, introEnterPressed)
         introScreen.style.setProperty("display", "none");
         viewport.style.setProperty("display", "flex");
         car.classList.add('introAnimationCar');
-        playSong();
+        scene.classList.add('introAnimationCamera');
         introEnterPressed = true;
+        playSong();
       }
       break;
     default:
@@ -185,7 +189,7 @@ function step(){
     playerMove = currPosition;
   }
 
-  console.log(currPosition + " || " + keyPress.code);
+  //console.log(currPosition + " || " + keyPress.code);
 
   if (otherKeyPressed === false){
     root.style.setProperty('--playerLeftRight', playerMove + "em");
