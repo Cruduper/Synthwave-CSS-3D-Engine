@@ -46,6 +46,10 @@ Camera Angle Change: 'C' key
 
 2. Red glowyness still suddenly appears on car during "Eco" mode during "boost" animation, making it look like the car changes color slightly. This needs to be fixed, but I still might want white glow to happen on tires during "Eco" mode. 
 
+3. Many parts of the code need refactoring. 
+
+4. More CSS variables should be made to keep the code DRY. 
+
 <br><br/>
 ## 🏁 Getting Started
 
