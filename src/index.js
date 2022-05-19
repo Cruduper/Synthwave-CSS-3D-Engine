@@ -11,6 +11,7 @@ const carContainer = document.getElementById('carContainer');
 const viewport = document.getElementById('viewport');
 const scene = document.getElementById('scene')
 const introScreen = document.getElementById('introScreen');
+const floors = document.querySelectorAll('.floor');
 const floorRate = getComputedStyle(root).getPropertyValue('--floorRate');
 const floorBoostRate = getComputedStyle(root).getPropertyValue('--floorBoostRate');
 const extraGlowRate = getComputedStyle(root).getPropertyValue('--extraGlowRate');
