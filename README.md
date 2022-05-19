@@ -2,18 +2,19 @@
 
 ### 🤝 Contributors 
 _code and original music **by Eric Crudup**_
-
-![image of 3D demo](src/img/SynthwaveCSS1small.png)
+<p align="center">
+  <img src="src/img/SynthwaveCSS1small.png" alt="image of 3D demo"/>
+</p>    
 
 ---
-## 🌐 About the Project
-
+## 🌐 About the Project     
+<br><br/>
 ### 📖 Description
  _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [Live GH-Pages link will go here at some point in the near future](https://cruduper.github.io/!!!!!insert_site_here!!!!)_
-
+<br><br/>
 #### _**! IMPORTANT !** -- In order to run this **you will likely need to have a semi-modern GPU installed on your machine**. It is unlikely to run at a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow. I created an "Eco" mode that uses slightly fewer resources (see Controls). I plan on optimizing performance both generally and for specific browsers at a later date._       
+<br><br/> 
 
-   
 ### 🎮 Controls
 ```
 Turn Left: left Arrow key
@@ -23,7 +24,7 @@ Camera Angle Change: 'C' key
 "Eco" Mode toggle: 'E' key
 ```
 
-
+<br><br/>
 ### 🛠 Technologies Used
 
 * _JavaScript_
@@ -33,8 +34,11 @@ Camera Angle Change: 'C' key
 * _eslint_
 * _tridiv_
 
+<p align="center">
+  <img src="src/img/tridiv-interface-small.jpg" alt="tridiv 3D modeling app"/>
+</p>
 
-![image of 3D demo](src/img/tridiv-interface-small.jpg)
+<br><br/>
 
 ### 🦠 Known Bugs OR Issues
 
@@ -42,8 +46,8 @@ Camera Angle Change: 'C' key
 
 2. Red glowyness still suddenly appears on car during "Eco" mode during "boost" animation, making it look like the car changes color slightly. This needs to be fixed, but I still might want white glow to happen on tires during "Eco" mode. 
 
+<br><br/>
 ## 🏁 Getting Started
-
 
 ### ⚙️ Setup/Installation Requirements
 
@@ -56,7 +60,7 @@ Camera Angle Change: 'C' key
 
 ## ⚖️ License
 
-For the non-music code: [MIT](https://opensource.org/licenses/MIT)    
+License for my code (but not music): [MIT](https://opensource.org/licenses/MIT)    
 
 ```
 MIT License
@@ -76,7 +80,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-If you have any issues or questions, or would like to permission to use the original music contained in this project, contact me at briefcasemanx@gmail.com.    
+If you have any issues or questions, or would like to permission to use my original music, 
+contact me at briefcasemanx@gmail.com.    
 Copyright (c) _2022_  _Eric Crudup_
 
 <center><a href="#">Return to Top</a></center>
