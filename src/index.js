@@ -30,6 +30,7 @@ let keyPress;
 let camAngle = 1;
 let introEnterPressed = false;
 let keysAllowed = false;
+let slidersVisible = false;
 window.onkeyup = function(e) { pressedKeys[e.code] = false; logKey(e);}
 window.onkeydown = function(e) { 
   if (pressedKeys[e.code] === false || pressedKeys[e.code] === undefined){
@@ -74,6 +75,21 @@ function logKey(key) {
               elem.style.display = 'none';
             });
             camAngle = 0;
+          }
+        }
+        break;
+      case 'KeyD':
+        if (key.type === 'keydown')
+        {
+          if (slidersVisible === false){
+            document.getElementById('cameraControls').style.display = 'block';
+            document.getElementById('controls').style.display = 'block';
+            slidersVisible = true;
+          }
+          else if (slidersVisible === true) {
+            document.getElementById('cameraControls').style.display = 'none'
+            document.getElementById('controls').style.display = 'none'
+            slidersVisible = false;
           }
         }
         break;
