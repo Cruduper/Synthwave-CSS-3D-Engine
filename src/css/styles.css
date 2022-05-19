@@ -381,7 +381,11 @@ animation-name: introAnimationCamera;
   100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
 }
 
-
+@keyframes introAnimationCamera { 
+  0% {transform: translateY( calc(var(--sceneHeight) + 10em) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ))}
+  75% {transform: translateY( calc(var(--sceneHeight) + 10em) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ))}
+  100% {transform: translateY( var(--sceneHeight) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ))}
+}
 
 
 
