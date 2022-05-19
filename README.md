@@ -3,8 +3,7 @@
 ### 🤝 Contributors 
 _**{Eric Crudup}**_
 
-![image](./src/img/sunset.png)
-<img src="./src/img/sunset.png" alt="Getting started" />
+![image of 3D demo](src/img/SynthwaveCSS1small.png)
 
 ---
 ## 🌐 About the Project
@@ -31,8 +30,11 @@ Camera Angle Change: 'C' key
 * _HTML_
 * _CSS_
 * _npm_
-* _tridiv.com_
 * _eslint_
+* _tridiv.com_
+
+
+![image of 3D demo](src/img/tridiv-interface-small.jpg)
 
 ### 🦠 Known Bugs OR Issues
 
