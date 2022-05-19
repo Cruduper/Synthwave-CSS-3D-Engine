@@ -31,7 +31,7 @@ Camera Angle Change: 'C' key
 * _CSS_
 * _npm_
 * _eslint_
-* _tridiv.com_
+* _tridiv_
 
 
 ![image of 3D demo](src/img/tridiv-interface-small.jpg)
