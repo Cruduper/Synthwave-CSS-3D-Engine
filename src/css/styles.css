@@ -358,6 +358,44 @@ background-color:#fff;
 
 
 
+      /*************    INTRO ANIMATIONS   **************/
+.introAnimationCar {
+animation-name: introAnimationCar;
+  animation-duration: 14.2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.introAnimationCamera {
+animation-name: introAnimationCamera;
+  animation-duration: 14.25s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
+          /************* INTRO ANIMATIONS KEYFRAMES ***************/
+@keyframes introAnimationCar { 
+  0% {transform: translateZ( var(--carZShift) ) translateY(-11.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
+  75% {transform: translateZ( var(--carZShift) ) translateY(-11.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
+  100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
+}
+
+
+
+
+/* .scene{
+  transform: translateY( var(--sceneHeight) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ)) ;
+}
+
+#car {
+  transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) );
+  font-size: .5em;
+} */
+
+
+
+
 
 
 
