@@ -155,6 +155,7 @@ function logKey(key) {
       if (introEnterPressed === false){
         introScreen.style.setProperty("display", "none");
         viewport.style.setProperty("display", "flex");
+        car.classList.add('introAnimationCar');
         playSong();
         introEnterPressed = true;
       }
