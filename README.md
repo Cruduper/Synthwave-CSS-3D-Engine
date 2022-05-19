@@ -12,7 +12,7 @@ _code and original music **by Eric Crudup**_
 ### 📖 Description
  _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [Live GH-Pages Deployment](https://cruduper.github.io/Synthwave-3D-CSS-Engine/)_
 <br><br/>
-#### _**! IMPORTANT !** -- In order to run this **you will likely need to have a semi-modern GPU installed on your machine**. It is unlikely to run at a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow. I created an "Eco" mode that uses slightly fewer resources (see Controls). I plan on optimizing performance both generally and for specific browsers at a later date._       
+#### _**! IMPORTANT !** -- In order to run this **you will likely need to have a semi-modern GPU installed on your machine**. It is unlikely to run at a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow and the intro animations executed incorrectly. I created an "Eco" mode that uses slightly fewer resources (see Controls). I plan on optimizing performance both generally and for specific browsers at a later date._       
 <br><br/> 
 
 ### 🎮 Controls
@@ -51,6 +51,10 @@ Camera Angle Change: 'C' key
 4. Many parts of the code need refactoring. 
 
 5. More CSS variables should be made to keep the code DRY. 
+
+6. Intro animations look wrong in some non-chrome browsers
+
+7. Timing of intro animations is off in some non-chrome browsers. 
 
 <br><br/>
 ## 🏁 Getting Started
