@@ -76,7 +76,7 @@ body  {
 }
 
 #cameraControls{
-  display: none;
+  display: block;
 }
 #controls {
   display: none;
@@ -377,13 +377,13 @@ animation-name: introAnimationCamera;
           /************* INTRO ANIMATIONS KEYFRAMES ***************/
 @keyframes introAnimationCar { 
   0% {transform: translateZ( var(--carZShift) ) translateY(-41.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
-  75% {transform: translateZ( var(--carZShift) ) translateY(-41.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
+  76% {transform: translateZ( var(--carZShift) ) translateY(-41.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
   100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
 }
 
 @keyframes introAnimationCamera { 
   0%    {transform: 
-          rotateX(270deg)
+           rotateX(270deg)/*TODO add these duplicated transformations below transformations with calc() when animation is satisfactory (will this break the animation though?) */
           rotateY( var(--sceneRotateY) ) 
           rotateX( var(--sceneRotateX) ) 
           rotateZ( var(--sceneRotateZ) )
@@ -391,8 +391,8 @@ animation-name: introAnimationCamera;
           translateX( calc(var(--sceneLeftRight) + 0em) ) 
           translateZ( calc(var(--sceneDistance) + 25em) ) 
         }
-  15%   {transform: 
-          rotateY( 90deg)
+  14%   {transform: 
+          rotateY( 90deg)/*TODO */
           rotateY( var(--sceneRotateY) ) 
           rotateX( var(--sceneRotateX) ) 
           rotateZ( var(--sceneRotateZ) )
@@ -400,23 +400,32 @@ animation-name: introAnimationCamera;
           translateX( calc(var(--sceneLeftRight) + 7em) ) 
           translateZ( calc(var(--sceneDistance) + 35em) ) 
         }
-  30%   {transform: 
-          rotateY( 180deg)
+  27.5% {transform: 
+          rotateY( 180deg)/*TODO */
           rotateY( var(--sceneRotateY) ) 
           rotateX( var(--sceneRotateX) ) 
           rotateZ( var(--sceneRotateZ) )
           translateY( calc(var(--sceneHeight) + 43em) ) 
           translateX( calc(var(--sceneLeftRight) - 40em) ) 
-          translateZ( calc(var(--sceneDistance) + 11em) ) 
+          translateZ( calc(var(--sceneDistance) + 11em) )
         }
-  99.999%   {transform: 
-          rotateY( 180deg)
+  76% {transform: 
+          rotateY( 180deg)/*TODO */
           rotateY( var(--sceneRotateY) ) 
           rotateX( var(--sceneRotateX) ) 
           rotateZ( var(--sceneRotateZ) )
           translateY( calc(var(--sceneHeight) + 43em) ) 
           translateX( calc(var(--sceneLeftRight) - 40em) ) 
-          translateZ( calc(var(--sceneDistance) + 11em) ) 
+          translateZ( calc(var(--sceneDistance) + 11em) ); 
+        }
+  99.9% {transform: 
+          rotateY( 180deg)/*TODO */
+          rotateY( var(--sceneRotateY) ) 
+          rotateX( var(--sceneRotateX) ) 
+          rotateZ( calc(var(--sceneRotateZ) + 0) )/*TODO why does this change when you add 0?? Looks good though! */
+          translateY( calc(var(--sceneHeight) + 39em) ) 
+          translateX( calc(var(--sceneLeftRight) - 40em) ) 
+          translateZ( calc(var(--sceneDistance) + 11em) );
         }
   100%  {transform: 
           translateY( var(--sceneHeight) ) 
