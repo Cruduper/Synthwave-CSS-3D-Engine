@@ -38,6 +38,7 @@ window.onkeydown = function(e) {
   }
 }
 
+
 function playSong() {
   const music = new Audio(mp3File);
   music.loop =false;
@@ -48,11 +49,8 @@ function playSong() {
 
 
 function logKey(key) {
-
   keyPress = key;
 
-  
-  //console.log(key.code, introEnterPressed);
   if( keysAllowed === true){  
     switch(key.code) {
       case 'KeyC':
@@ -104,10 +102,7 @@ function logKey(key) {
             face.classList.toggle("trunkColor");
           });
         }
-        //console.log("eco mode changed");
-        // console.log(key);
         break;
-      
       case 'ArrowLeft':
         if (key.type === "keydown"){
           car.classList.remove('carBodyTurnLeft', 'carBodyLeftToCenter', 'carBodyTurnRight', 'carBodyRightToCenter');
@@ -184,7 +179,6 @@ function logKey(key) {
 
 
 function step(){
-  //const elapsed = timestamp - start;
   let playerMove; 
   let otherKeyPressed = false;
   const stepIncrement = 2;
@@ -201,9 +195,6 @@ function step(){
     otherKeyPressed = true;
     playerMove = currPosition;
   }
-
-  //console.log(currPosition + " || " + keyPress.code);
-
   if (otherKeyPressed === false){
     root.style.setProperty('--playerLeftRight', playerMove + "em");
     
@@ -229,8 +220,6 @@ function setCameraAngle(camDist, height, rotX, rotY, rotZ, perspect, perspectOri
   root.style.setProperty('--carZShift', carDist + "em");
 }
 
-
-
 function addCameraSliders(){
 
   const slider = document.getElementById("angleSlider");
@@ -251,10 +240,11 @@ function addCameraSliders(){
   });
 }
 
+
+
+
 $(document).ready(function() {
   const root = document.documentElement;
-  
-
   
   addCameraSliders();
 
@@ -272,9 +262,6 @@ $(document).ready(function() {
       root.style.setProperty("--extraGlowRate", extraGlowRate);
       root.style.setProperty("--tireRotationRate", tireRotationRate);
     }
-
-
-    //car.classList.add('introAnimationCar');
   });
 
   car.addEventListener("animationend", (event)=>{
@@ -286,6 +273,7 @@ $(document).ready(function() {
       floorExtraGlow.style.display = 'block';
       sunset.style.display = 'block';
       palmTree.style.display = 'block';
+      keysAllowed = true;
     }
   });
 })
