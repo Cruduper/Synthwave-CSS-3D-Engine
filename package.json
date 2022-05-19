@@ -1,13 +1,12 @@
 {
   "name": "3D Engine in CSS",
   "version": "1.0.0",
-  "description": "3D modeling done with only CSS and HTML",
+  "description": "3D modeling rendered with CSS and HTML",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "npm run build & webpack-dev-server --open --mode development",
+    "start": "npm run build & webpack-dev-server --open chrome--incognito --mode development",
     "lint": "eslint src/*js",
-    "test": "jest --colors --coverage",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
@@ -21,7 +20,7 @@
     "dotenv-webpack": "^2.0.0",
     "eslint": "^6.3.0",
     "eslint-loader": "^3.0.0",
-    "file-loader": "^1.1.6",
+    "file-loader": "^6.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^1.0.0",
@@ -31,8 +30,8 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
+    "gh-pages": "^3.2.3",
     "jquery": "^3.6.0",
-    "popper.js": "^1.16.1",
-    "gh-pages": "^3.2.3"
+    "popper.js": "^1.16.1"
   }
 }

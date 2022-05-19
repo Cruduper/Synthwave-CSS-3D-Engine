@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+// const SRC = path.resolve(__dirname, './src/index.js');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -11,7 +13,10 @@ module.exports = {
   },
   devtool: 'eval-source-map', 
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    open: {
+      app: ["chrome", '--incognito'],
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -38,18 +43,22 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/images/'
-            }
-          }
-        ]
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'assets/images/',
+          esModule: false, //default value for esModule changed to true with version 5.0.0
+        }
       },
       {
-        test:/\.html$/,
+        test: /\.mp3$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'assets/audio/'
+        }
+      },
+      {
+        test: /\.html$/,
         use: [
           'html-loader'
         ]
