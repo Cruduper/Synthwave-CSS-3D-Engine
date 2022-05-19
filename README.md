@@ -1,7 +1,7 @@
 # _Synthwave CSS 3D Engine Demo_
 
 ### 🤝 Contributors 
-_**all source code and original music by Eric Crudup**_
+_code and original music **by Eric Crudup**_
 
 ![image of 3D demo](src/img/SynthwaveCSS1small.png)
 
