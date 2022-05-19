@@ -86,7 +86,7 @@ body  {
 #playerleftRSlid {  right: 10%; }
 #distSlid { left: 20% }
 
-.scene, #ground, #car, #palmTree, #sunset, #tireFrontLeft, #tireFrontRight, #carContainer {
+#scene, #ground, #car, #palmTree, #sunset, #tireFrontLeft, #tireFrontRight, #carContainer {
   position: relative;
   transform-style: preserve-3d;
 }
@@ -103,7 +103,7 @@ body  {
   transform-style: preserve-3d;
 }
 
-.scene{
+#scene{
   transform: translateY( var(--sceneHeight) ) translateX( var(--sceneLeftRight) ) translateZ( var(--sceneDistance)) rotateY( var(--sceneRotateY)) rotateX(var(--sceneRotateX)) rotateZ( var(--sceneRotateZ)) ;
 }
 
@@ -360,7 +360,7 @@ background-color:#fff;
 
       /*************    INTRO ANIMATIONS   **************/
 .introAnimationCar {
-animation-name: introAnimationCar;
+  animation-name: introAnimationCar;
   animation-duration: 14.2s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -380,6 +380,8 @@ animation-name: introAnimationCamera;
   75% {transform: translateZ( var(--carZShift) ) translateY(-11.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
   100% {transform: translateZ( var(--carZShift) ) translateY(51.8em) translateX( calc(30.35em + var(--playerLeftRight)) )}
 }
+
+
 
 
 
