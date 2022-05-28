@@ -3,7 +3,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import mp3File from './audio/synthwaveCSSDemoSong.mp3';
-import img from './img/sunset.png';
 
 const root = document.documentElement;
 const car = document.getElementById('car');
@@ -44,7 +43,7 @@ function playSong() {
   const music = new Audio(mp3File);
   music.loop =false;
   music.playbackRate = 1;
-  music.volume = 0.6;
+  music.volume = 1;
   music.play();
 }
 
