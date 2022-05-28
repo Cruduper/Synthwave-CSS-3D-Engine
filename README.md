@@ -2,17 +2,20 @@
 
 ### 🤝 Contributors 
 _code and original music **by Eric Crudup**_
-<p align="center">
-  <img src="src/img/SynthwaveCSS1small.png" alt="image of 3D demo"/>
-</p>    
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=bdU4kGyjrs0" ><img src="src/img/SynthwaveCSS1small.png" alt="image of 3D demo"/></a>
+  <p>Click image for Youtube video demonstration<p>
+</div>    
 
 ---
 ## 🌐 About the Project     
 <br><br/>
 ### 📖 Description
- _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [Live GH-Pages Deployment](https://cruduper.github.io/Synthwave-3D-CSS-Engine/)_
+ _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [Live GH-Pages Deployment](https://cruduper.github.io/Synthwave-CSS-3D-Engine/)_
 <br><br/>
-#### _**! IMPORTANT !** -- In order to run this **you will likely need to have a semi-modern GPU installed on your machine**. It is unlikely to run at a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow and the intro animations executed incorrectly. I created an "Eco" mode that uses fewer resources and runs slightly faster (see Controls). I plan on optimizing performance both generally and for specific browsers at a later date._       
+#### _**! IMPORTANT !** -- In order to run this **you will likely need to have a semi-modern GPU installed on your machine**. It is unlikely to run at a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow and the intro animations executed incorrectly. I created an "Eco" mode that uses fewer resources and runs slightly faster (see Controls). I plan on optimizing performance both generally and for specific browsers at a later date.
+
+Here's a video demonstration of the project on Youtube, if your computer isn't powerful enough to run it: https://www.youtube.com/watch?v=bdU4kGyjrs0_       
 <br><br/> 
 
 ### 🎮 Controls
