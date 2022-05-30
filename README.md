@@ -15,7 +15,7 @@ _code and original music **by Eric Crudup**_
 <br><br/>
 #### _**! IMPORTANT !** -- In order to run this **you will likely need to have a semi-modern GPU installed on your machine**. It is unlikely to run at a usable framerate using onboard graphics. **Google Chrome is the preffered browser** to run this application at this time. In some other browsers I tested, the app ran anywhere from slow to unusably slow and the intro animations executed incorrectly. I created an "Eco" mode that uses fewer resources and runs slightly faster (see Controls). I plan on optimizing performance both generally and for specific browsers at a later date.
 
-Here's a video demonstration of the project on Youtube, if your computer isn't powerful enough to run it: https://www.youtube.com/watch?v=bdU4kGyjrs0_       
+Here's a video demonstration of the project on Youtube, if your computer isn't powerful enough to run the GH-Pages deployment linked above: https://www.youtube.com/watch?v=bdU4kGyjrs0_       
 <br><br/> 
 
 ### 🎮 Controls
