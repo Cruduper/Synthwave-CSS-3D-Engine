@@ -1,6 +1,5 @@
 # _Synthwave CSS 3D Engine Demo_
 
-### 🤝 Contributors 
 _code and original music **by Eric Crudup**_
 <div align="center">
   <a href="https://www.youtube.com/watch?v=bdU4kGyjrs0" ><img src="src/img/SynthwaveCSS1small.png" alt="image of 3D demo"/></a>
@@ -9,7 +8,7 @@ _code and original music **by Eric Crudup**_
 
 ---
 ## 🌐 About the Project     
-<br><br/>
+
 ### 📖 Description
  _I made this application to explore what's possible with 3D transformations of HTML elements using CSS. My idea was to create a simple 3d scene rendered 100% with HTML elements, transformed by a CSS stylesheet. There are multiple javascript libraries that specialize in 3D modeling and animation such as three.js, and if I were to make something like this commercially, I wouldn't hesitate to use one of those libraries. Using a library would have made the project MUCH easier and the final results would have been better IMO. My goal here was to push the limits of CSS and take it places it wasn't necessarily designed to go. For funsies. [Live GH-Pages Deployment](https://cruduper.github.io/Synthwave-CSS-3D-Engine/)_
 <br><br/>
